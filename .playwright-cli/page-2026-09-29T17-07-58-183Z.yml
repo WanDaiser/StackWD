@@ -1,0 +1,123 @@
+- generic [active] [ref=f59e1]:
+  - banner [ref=f59e2]:
+    - link "İçeriğe geç" [ref=f59e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f59e4]:
+      - link "StackWD ana sayfa" [ref=f59e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f59e6]: StackWD
+      - navigation "Ana menü" [ref=f59e12]:
+        - list [ref=f59e13]:
+          - listitem [ref=f59e14]:
+            - link "Hizmetler" [ref=f59e15] [cursor=pointer]:
+              - /url: /#services
+          - listitem [ref=f59e16]:
+            - link "İşler" [ref=f59e17] [cursor=pointer]:
+              - /url: /#work
+          - listitem [ref=f59e18]:
+            - link "Süreç" [ref=f59e19] [cursor=pointer]:
+              - /url: /#process
+          - listitem [ref=f59e20]:
+            - link "Hakkında" [ref=f59e21] [cursor=pointer]:
+              - /url: /#about
+      - generic [ref=f59e22]:
+        - group [ref=f59e23]:
+          - generic "Dil seçimi, TR" [ref=f59e24] [cursor=pointer]:
+            - generic [ref=f59e27]: Dil seçimi,
+            - generic [ref=f59e28]: TR
+        - button "Açık temaya geç" [ref=f59e29]
+        - link "Projenizi konuşalım" [ref=f59e33] [cursor=pointer]:
+          - /url: /#contact
+  - main [ref=f59e38]:
+    - article [ref=f59e39]:
+      - generic [ref=f59e40]:
+        - link "Tüm işler" [ref=f59e41] [cursor=pointer]:
+          - /url: /#work
+        - generic [ref=f59e44]: Yer tutucu
+        - heading "E-ticaret vakası" [level=1] [ref=f59e46]
+        - paragraph [ref=f59e47]: Bu alan gerçek bir proje ya da açıkça etiketlenmiş bir konsept çalışma ile doldurulacak. Projenin tek cümlelik özeti buraya gelir.
+        - generic [ref=f59e48]:
+          - generic [ref=f59e49]:
+            - term [ref=f59e50]: Müşteri
+            - definition [ref=f59e51]: "-"
+          - generic [ref=f59e52]:
+            - term [ref=f59e53]: Sektör
+            - definition [ref=f59e54]: Sektör eklenecek
+          - generic [ref=f59e55]:
+            - term [ref=f59e56]: Yıl
+            - definition [ref=f59e57]: "2026"
+          - generic [ref=f59e58]:
+            - term [ref=f59e59]: Hizmetler
+            - definition [ref=f59e60]: E-ticaret, SEO ve performans
+      - generic [ref=f59e61]: Proje görseli eklenecek
+      - note [ref=f59e95]: Bu sayfa bir yer tutucudur. Gerçek proje içeriği eklenecek.
+      - generic [ref=f59e99]:
+        - heading "Problem" [level=2] [ref=f59e100]
+        - paragraph [ref=f59e101]: Projenin çözdüğü problemi iki üç cümleyle anlatın. Müşteri kimdi, neye ihtiyaç duyuyordu ve mevcut durumda ne işlemiyordu?
+        - heading "Yaklaşım" [level=2] [ref=f59e102]
+        - paragraph [ref=f59e103]: Problemi nasıl ele aldığınızı anlatın. Hangi kararları neden verdiniz? Tasarım ve teknik tercihlerinizi kısaca açıklayın.
+        - heading "Sonuç" [level=2] [ref=f59e104]
+        - paragraph [ref=f59e105]: Sonucu doğrulanabilir bilgilerle anlatın. Rakam kullanacaksanız yalnızca gerçek ölçümlere dayanan değerleri yazın.
+      - navigation "Sonraki vaka" [ref=f59e106]:
+        - link "Sonraki vaka Web uygulaması vakası" [ref=f59e107] [cursor=pointer]:
+          - /url: /isler/ornek-vaka-3/
+          - text: Sonraki vaka
+          - generic [ref=f59e108]: Web uygulaması vakası
+  - contentinfo [ref=f59e113]:
+    - generic [ref=f59e114]:
+      - generic [ref=f59e115]:
+        - generic [ref=f59e116]:
+          - link "StackWD ana sayfa" [ref=f59e117] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f59e118]: StackWD
+          - paragraph [ref=f59e124]: Katman katman kurulan web siteleri.
+        - navigation [ref=f59e125]:
+          - heading "Site haritası" [level=2] [ref=f59e126]
+          - list [ref=f59e127]:
+            - listitem [ref=f59e128]:
+              - link "Hizmetler" [ref=f59e129] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=f59e130]:
+              - link "İşler" [ref=f59e131] [cursor=pointer]:
+                - /url: /#work
+            - listitem [ref=f59e132]:
+              - link "Süreç" [ref=f59e133] [cursor=pointer]:
+                - /url: /#process
+            - listitem [ref=f59e134]:
+              - link "Hakkında" [ref=f59e135] [cursor=pointer]:
+                - /url: /#about
+            - listitem [ref=f59e136]:
+              - link "SSS" [ref=f59e137] [cursor=pointer]:
+                - /url: /#faq
+            - listitem [ref=f59e138]:
+              - link "İletişim" [ref=f59e139] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=f59e140]:
+          - heading "İletişim" [level=2] [ref=f59e141]
+          - list [ref=f59e142]:
+            - listitem [ref=f59e143]:
+              - link "salihefeggl@gmail.com" [ref=f59e144] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+            - listitem [ref=f59e147]:
+              - link "WhatsApp" [ref=f59e148] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+            - listitem [ref=f59e151]:
+              - link "0552 479 32 33" [ref=f59e152] [cursor=pointer]:
+                - /url: tel:+905524793233
+      - paragraph [aria-hidden]: StackWD
+      - generic [ref=f59e155]:
+        - paragraph [ref=f59e156]: © 2026 StackWD. Tüm hakları saklıdır.
+        - generic [ref=f59e157]:
+          - list "Dil seçimi" [ref=f59e158]:
+            - listitem [ref=f59e159]:
+              - link "Türkçe" [ref=f59e160] [cursor=pointer]:
+                - /url: /isler/ornek-vaka-2/
+            - listitem [ref=f59e161]:
+              - link "English" [ref=f59e162] [cursor=pointer]:
+                - /url: /en/work/ornek-vaka-2/
+            - listitem [ref=f59e163]:
+              - link "Español" [ref=f59e164] [cursor=pointer]:
+                - /url: /es/proyectos/ornek-vaka-2/
+          - button "Açık temaya geç" [ref=f59e165]
+          - link "Başa dön" [ref=f59e168] [cursor=pointer]:
+            - /url: "#top"

@@ -1,0 +1,77 @@
+---
+/** Dil seçici. Masaüstünde açılır liste, mobil menüde düz liste olarak kullanılır. */
+import Icon from './Icon.astro';
+import { languages, langs, type Lang } from '../i18n/ui';
+import { homePath, useTranslations, type Alternates } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  variant?: 'dropdown' | 'inline';
+  alternates?: Alternates;
+  class?: string;
+}
+const { lang, variant = 'dropdown', alternates, class: className = '' } = Astro.props;
+const hrefFor = (code: Lang) => alternates?.[code] ?? homePath(code);
+const t = useTranslations(lang);
+---
+
+{
+  variant === 'dropdown' ? (
+    <details class:list={['lang-switch relative', className]}>
+      <summary
+        class="flex h-11 cursor-pointer list-none items-center gap-1.5 rounded-full px-3 text-small font-medium text-ink transition-colors duration-(--dur-base) hover:bg-sunk [&::-webkit-details-marker]:hidden"
+      >
+        <Icon name="globe" class="size-[18px]" />
+        <span class="sr-only">{t('a11y.language')}, </span>
+        <span>{languages[lang].short}</span>
+      </summary>
+      <ul class="absolute top-full right-0 mt-2 min-w-40 rounded-card border border-hairline bg-surface p-1.5 shadow-lift">
+        {langs.map((code) => (
+          <li>
+            <a
+              href={hrefFor(code)}
+              hreflang={languages[code].htmlLang}
+              lang={languages[code].htmlLang}
+              aria-current={code === lang ? 'true' : undefined}
+              class="flex h-11 items-center justify-between gap-4 rounded-input px-3 text-small text-body transition-colors duration-(--dur-fast) hover:bg-sunk aria-[current]:text-ink aria-[current]:font-medium"
+            >
+              {languages[code].label}
+              <span class="font-mono text-eyebrow text-muted">{languages[code].short}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  ) : (
+    <ul class:list={['flex gap-2', className]} aria-label={t('a11y.language')}>
+      {langs.map((code) => (
+        <li>
+          <a
+            href={hrefFor(code)}
+            hreflang={languages[code].htmlLang}
+            lang={languages[code].htmlLang}
+            aria-current={code === lang ? 'true' : undefined}
+            class="grid h-11 min-w-11 place-items-center rounded-full border border-hairline px-4 text-small text-body aria-[current]:border-ink aria-[current]:text-ink"
+          >
+            {languages[code].label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+<script>
+  // Açık listeyi dışarı tıklayınca ya da Escape ile kapat.
+  document.querySelectorAll<HTMLDetailsElement>('details.lang-switch').forEach((el) => {
+    document.addEventListener('click', (e) => {
+      if (el.open && !el.contains(e.target as Node)) el.open = false;
+    });
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && el.open) {
+        el.open = false;
+        el.querySelector('summary')?.focus();
+      }
+    });
+  });
+</script>

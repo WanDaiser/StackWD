@@ -1,0 +1,45 @@
+- generic [active] [ref=f30e1]:
+  - banner [ref=f30e2]:
+    - link "İçeriğe geç" [ref=f30e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f30e4]:
+      - link "StackWD ana sayfa" [ref=f30e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f30e6]: StackWD
+      - navigation "Ana menü" [ref=f30e12]:
+        - list [ref=f30e13]:
+          - listitem [ref=f30e14]:
+            - link "Hizmetler" [ref=f30e15] [cursor=pointer]:
+              - /url: /#services
+          - listitem [ref=f30e16]:
+            - link "İşler" [ref=f30e17] [cursor=pointer]:
+              - /url: /#work
+          - listitem [ref=f30e18]:
+            - link "Süreç" [ref=f30e19] [cursor=pointer]:
+              - /url: /#process
+          - listitem [ref=f30e20]:
+            - link "Hakkında" [ref=f30e21] [cursor=pointer]:
+              - /url: /#about
+      - generic [ref=f30e22]:
+        - group [ref=f30e23]:
+          - 'generic "Dil seçimi: Türkçe" [ref=f30e24] [cursor=pointer]':
+            - generic [aria-hidden] [ref=f30e27]: TR
+        - button "Koyu temaya geç" [ref=f30e28]
+        - link "Projenizi konuşalım" [ref=f30e32] [cursor=pointer]:
+          - /url: /#contact
+  - main [ref=f30e37]:
+    - generic [ref=f30e39]:
+      - paragraph [ref=f30e40]: "404"
+      - heading "Bu sayfa katmanlar arasında kayboldu." [level=1] [ref=f30e41]
+      - paragraph [ref=f30e42]: Aradığınız adres taşınmış ya da hiç var olmamış olabilir.
+      - link "Ana sayfaya dön" [ref=f30e44] [cursor=pointer]:
+        - /url: /
+      - list [ref=f30e49]:
+        - listitem [ref=f30e50]:
+          - text: The address may have moved, or it may never have existed.
+          - link "Back to home" [ref=f30e51] [cursor=pointer]:
+            - /url: /en/
+        - listitem [ref=f30e52]:
+          - text: Puede que la dirección haya cambiado o que nunca haya existido.
+          - link "Volver al inicio" [ref=f30e53] [cursor=pointer]:
+            - /url: /es/

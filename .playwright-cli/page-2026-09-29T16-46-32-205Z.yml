@@ -1,0 +1,27 @@
+- generic [active] [ref=f11e1]:
+  - banner [ref=f11e2]:
+    - link "İçeriğe geç" [ref=f11e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f11e4]:
+      - link "StackWD ana sayfa" [ref=f11e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f11e6]: StackWD
+      - generic [ref=f11e12]:
+        - button "Açık temaya geç" [ref=f11e13]
+        - button "Menüyü aç" [ref=f11e16]
+  - main [ref=f11e19]:
+    - generic [ref=f11e21]:
+      - paragraph [ref=f11e22]: "404"
+      - heading "Bu sayfa katmanlar arasında kayboldu." [level=1] [ref=f11e23]
+      - paragraph [ref=f11e24]: Aradığınız adres taşınmış ya da hiç var olmamış olabilir.
+      - link "Ana sayfaya dön" [ref=f11e26] [cursor=pointer]:
+        - /url: /
+      - list [ref=f11e31]:
+        - listitem [ref=f11e32]:
+          - text: The address may have moved, or it may never have existed.
+          - link "Back to home" [ref=f11e33] [cursor=pointer]:
+            - /url: /en/
+        - listitem [ref=f11e34]:
+          - text: Puede que la dirección haya cambiado o que nunca haya existido.
+          - link "Volver al inicio" [ref=f11e35] [cursor=pointer]:
+            - /url: /es/

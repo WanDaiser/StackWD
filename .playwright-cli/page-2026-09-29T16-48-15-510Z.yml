@@ -1,0 +1,357 @@
+- generic [active] [ref=f17e1]:
+  - banner [ref=f17e2]:
+    - link "Skip to content" [ref=f17e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f17e4]:
+      - link "StackWD home" [ref=f17e5] [cursor=pointer]:
+        - /url: /en/
+        - generic [ref=f17e6]: StackWD
+      - navigation "Main menu" [ref=f17e12]:
+        - list [ref=f17e13]:
+          - listitem [ref=f17e14]:
+            - link "Services" [ref=f17e15] [cursor=pointer]:
+              - /url: /en/#services
+          - listitem [ref=f17e16]:
+            - link "Work" [ref=f17e17] [cursor=pointer]:
+              - /url: /en/#work
+          - listitem [ref=f17e18]:
+            - link "Process" [ref=f17e19] [cursor=pointer]:
+              - /url: /en/#process
+          - listitem [ref=f17e20]:
+            - link "About" [ref=f17e21] [cursor=pointer]:
+              - /url: /en/#about
+      - generic [ref=f17e22]:
+        - group [ref=f17e23]:
+          - 'generic "Language: English" [ref=f17e24] [cursor=pointer]':
+            - generic [aria-hidden] [ref=f17e27]: EN
+        - button "Switch to light theme" [ref=f17e28]
+        - link "Discuss your project" [ref=f17e32] [cursor=pointer]:
+          - /url: /en/#contact
+  - main [ref=f17e37]:
+    - region [ref=f17e38]:
+      - generic [ref=f17e39]:
+        - paragraph [ref=f17e40]: Web design and development
+        - heading "Websites built layer by layer." [level=1] [ref=f17e41]
+        - generic [ref=f17e42]:
+          - generic [ref=f17e43]:
+            - paragraph [ref=f17e44]: Strategy, design, code and launch in one pair of hands. Fast, accessible, long-lasting websites for your business.
+            - link "Discuss your project" [ref=f17e46] [cursor=pointer]:
+              - /url: /en/#contact
+          - img "An abstract drawing of strategy, interface, code and launch layers stacked on top of each other." [ref=f17e52]:
+            - generic [ref=f17e54]: Launch
+            - generic [ref=f17e65]: Code
+            - generic [ref=f17e88]:
+              - generic [ref=f17e89]: Aa
+              - generic [ref=f17e98]: Interface
+            - generic [ref=f17e99]: Strategy
+    - region [ref=f17e111]:
+      - generic [ref=f17e112]:
+        - generic [ref=f17e113]:
+          - heading "Every layer a website needs." [level=2] [ref=f17e114]
+          - paragraph [ref=f17e115]: From a single campaign page to a full web application, we take on the whole job with the same care, from idea to launch and beyond.
+        - list [ref=f17e116]:
+          - listitem [ref=f17e117]:
+            - generic [ref=f17e121]:
+              - heading "Corporate website" [level=3] [ref=f17e122]
+              - paragraph [ref=f17e123]: Multi-page sites that tell your brand story clearly, are easy to update and can be found in search.
+              - paragraph [ref=f17e124]:
+                - generic [ref=f17e125]: "Scope:"
+                - text: Content architecture, Multilingual setup, Admin panel
+          - listitem [ref=f17e126]:
+            - generic [ref=f17e130]:
+              - heading "Landing page" [level=3] [ref=f17e131]
+              - paragraph [ref=f17e132]: Fast conversion pages focused on a single goal, built for campaigns and launches.
+              - paragraph [ref=f17e133]:
+                - generic [ref=f17e134]: "Scope:"
+                - text: Message structure, Forms and tracking, Test-ready build
+          - listitem [ref=f17e135]:
+            - generic [ref=f17e139]:
+              - heading "E-commerce" [level=3] [ref=f17e140]
+              - paragraph [ref=f17e141]: Online stores that present your products through a clear shopping experience that earns trust.
+              - paragraph [ref=f17e142]:
+                - generic [ref=f17e143]: "Scope:"
+                - text: Catalog structure, Payment integration, Order flow
+          - listitem [ref=f17e144]:
+            - generic [ref=f17e148]:
+              - heading "Web application" [level=3] [ref=f17e149]
+              - paragraph [ref=f17e150]: Custom apps that move processes such as bookings, reservations or client portals into the browser.
+              - paragraph [ref=f17e151]:
+                - generic [ref=f17e152]: "Scope:"
+                - text: User accounts, Database and API, Admin screens
+          - listitem [ref=f17e153]:
+            - generic [ref=f17e157]:
+              - heading "UI/UX design" [level=3] [ref=f17e158]
+              - paragraph [ref=f17e159]: Interface design grounded in user flows, a design system and files ready for development.
+              - paragraph [ref=f17e160]:
+                - generic [ref=f17e161]: "Scope:"
+                - text: User flows, Prototype, Design system
+          - listitem [ref=f17e162]:
+            - generic [ref=f17e166]:
+              - heading "Redesign" [level=3] [ref=f17e167]
+              - paragraph [ref=f17e168]: Moving your current site to a modern, fast and consistent build while keeping its content and search rankings.
+              - paragraph [ref=f17e169]:
+                - generic [ref=f17e170]: "Scope:"
+                - text: Current state audit, SEO migration plan, Content migration
+          - listitem [ref=f17e171]:
+            - generic [ref=f17e175]:
+              - heading "SEO and performance" [level=3] [ref=f17e176]
+              - paragraph [ref=f17e177]: Technical SEO, speed and accessibility improvements for sites that load slowly or stay invisible in search.
+              - paragraph [ref=f17e178]:
+                - generic [ref=f17e179]: "Scope:"
+                - text: Core Web Vitals, Technical SEO, Accessibility audit
+          - listitem [ref=f17e180]:
+            - generic [ref=f17e184]:
+              - heading "Care and support" [level=3] [ref=f17e185]
+              - paragraph [ref=f17e186]: Continuity after launch through updates, backups, security monitoring and small improvements.
+              - paragraph [ref=f17e187]:
+                - generic [ref=f17e188]: "Scope:"
+                - text: Updates and backups, Security monitoring, Content help
+    - region [ref=f17e189]:
+      - generic [ref=f17e190]:
+        - generic [ref=f17e191]:
+          - paragraph [ref=f17e192]: Selected work
+          - heading "Every project starts with its own question." [level=2] [ref=f17e193]
+          - paragraph [ref=f17e194]: Each case walks through the problem, the approach and the outcome.
+        - generic [ref=f17e195]:
+          - article [ref=f17e196]:
+            - generic [ref=f17e197]: Project image coming soon
+            - generic [ref=f17e209]: Placeholder
+            - generic [ref=f17e211]:
+              - heading [level=3] [ref=f17e212]:
+                - link "Corporate website case" [ref=f17e213] [cursor=pointer]:
+                  - /url: /en/work/ornek-vaka-1/
+              - paragraph [ref=f17e214]: Sector to be added, 2026
+            - paragraph [ref=f17e215]: This slot will hold a real project or a clearly labeled concept work. A one-sentence summary of the project goes here.
+            - generic [aria-hidden] [ref=f17e216]: View case
+          - article [ref=f17e219]:
+            - generic [ref=f17e220]: Project image coming soon
+            - generic [ref=f17e253]: Placeholder
+            - generic [ref=f17e255]:
+              - heading [level=3] [ref=f17e256]:
+                - link "E-commerce case" [ref=f17e257] [cursor=pointer]:
+                  - /url: /en/work/ornek-vaka-2/
+              - paragraph [ref=f17e258]: Sector to be added, 2026
+            - paragraph [ref=f17e259]: This slot will hold a real project or a clearly labeled concept work. A one-sentence summary of the project goes here.
+            - generic [aria-hidden] [ref=f17e260]: View case
+          - article [ref=f17e263]:
+            - generic [ref=f17e264]: Project image coming soon
+            - generic [ref=f17e276]: Placeholder
+            - generic [ref=f17e278]:
+              - heading [level=3] [ref=f17e279]:
+                - link "Web application case" [ref=f17e280] [cursor=pointer]:
+                  - /url: /en/work/ornek-vaka-3/
+              - paragraph [ref=f17e281]: Sector to be added, 2026
+            - paragraph [ref=f17e282]: This slot will hold a real project or a clearly labeled concept work. A one-sentence summary of the project goes here.
+            - generic [aria-hidden] [ref=f17e283]: View case
+    - region [ref=f17e286]:
+      - generic [ref=f17e287]:
+        - generic [ref=f17e289]:
+          - heading "Four layers, one clear process." [level=2] [ref=f17e290]
+          - paragraph [ref=f17e291]: What happens at each stage, and what you receive at the end of it, is clear from the start. You work directly with the same person throughout.
+        - list [ref=f17e293]:
+          - listitem [ref=f17e294]:
+            - generic [ref=f17e305]:
+              - paragraph [ref=f17e306]: Strategy
+              - heading "Discovery" [level=3] [ref=f17e307]
+              - paragraph [ref=f17e308]: We start by listening to your business, your audience and your competitors, then agree on what the site must achieve.
+              - generic [ref=f17e309]:
+                - generic [ref=f17e310]:
+                  - term [ref=f17e311]: From you
+                  - definition [ref=f17e312]: Your goals, plus any existing content and brand files.
+                - generic [ref=f17e313]:
+                  - term [ref=f17e314]: Delivered
+                  - definition [ref=f17e315]: Scope, sitemap and timeline.
+          - listitem [ref=f17e316]:
+            - generic [ref=f17e327]:
+              - paragraph [ref=f17e328]: Interface
+              - heading "Design" [level=3] [ref=f17e329]
+              - paragraph [ref=f17e330]: Content structure and interface come first as wireframes, then as detailed design. Desktop and mobile are designed together.
+              - generic [ref=f17e331]:
+                - generic [ref=f17e332]:
+                  - term [ref=f17e333]: From you
+                  - definition [ref=f17e334]: Feedback on the drafts.
+                - generic [ref=f17e335]:
+                  - term [ref=f17e336]: Delivered
+                  - definition [ref=f17e337]: Approved interface design and a clickable prototype.
+          - listitem [ref=f17e338]:
+            - generic [ref=f17e349]:
+              - paragraph [ref=f17e350]: Code
+              - heading "Development" [level=3] [ref=f17e351]
+              - paragraph [ref=f17e352]: The design becomes fast, accessible code that is easy to update. You follow progress on a live preview link.
+              - generic [ref=f17e353]:
+                - generic [ref=f17e354]:
+                  - term [ref=f17e355]: From you
+                  - definition [ref=f17e356]: Final content and notes on the preview.
+                - generic [ref=f17e357]:
+                  - term [ref=f17e358]: Delivered
+                  - definition [ref=f17e359]: A tested site, ready to launch.
+          - listitem [ref=f17e360]:
+            - generic [ref=f17e371]:
+              - paragraph [ref=f17e372]: Launch
+              - heading "Launch" [level=3] [ref=f17e373]
+              - paragraph [ref=f17e374]: We set up the domain, hosting, analytics and search settings, then put the site live. Support continues after launch.
+              - generic [ref=f17e375]:
+                - generic [ref=f17e376]:
+                  - term [ref=f17e377]: From you
+                  - definition [ref=f17e378]: Domain access and final approval.
+                - generic [ref=f17e379]:
+                  - term [ref=f17e380]: Delivered
+                  - definition [ref=f17e381]: Live site, a short guide and care options.
+    - region [ref=f17e382]:
+      - generic [ref=f17e383]:
+        - generic [ref=f17e384]:
+          - heading "A small studio, direct communication." [level=2] [ref=f17e385]
+          - paragraph [ref=f17e386]: StackWD is a one-person studio. The same person designs, builds and launches your project from start to finish.
+          - paragraph [ref=f17e387]: With no layers in between, decisions are quick, nothing gets lost in hand-offs and you always know who to reach. The studio exists to make solid, simple work that carries your brand online for years.
+        - generic [ref=f17e388]:
+          - heading "How we work" [level=3] [ref=f17e389]
+          - generic [ref=f17e390]:
+            - generic [ref=f17e391]:
+              - term [ref=f17e392]: Direct communication
+              - definition [ref=f17e393]: At every stage you talk to the same person, with no middlemen.
+            - generic [ref=f17e394]:
+              - term [ref=f17e395]: Measurable quality
+              - definition [ref=f17e396]: Speed, accessibility and SEO rely on measurement, not taste, and are tested before launch.
+            - generic [ref=f17e397]:
+              - term [ref=f17e398]: Transparency
+              - definition [ref=f17e399]: Scope, timeline and cost are agreed in writing from the start.
+            - generic [ref=f17e400]:
+              - term [ref=f17e401]: You own it
+              - definition [ref=f17e402]: The domain, content and source code are yours. You can continue with anyone, anytime.
+    - region [ref=f17e403]:
+      - generic [ref=f17e404]:
+        - generic [ref=f17e405]:
+          - heading "Frequently asked questions" [level=2] [ref=f17e406]
+          - paragraph [ref=f17e407]: If your question is not here, just write to us.
+        - generic [ref=f17e408]:
+          - group [ref=f17e409]:
+            - generic "How long does a website project take?" [ref=f17e410] [cursor=pointer]
+          - group [ref=f17e415]:
+            - generic "How is pricing done?" [ref=f17e416] [cursor=pointer]
+          - group [ref=f17e421]:
+            - generic "Who prepares the content?" [ref=f17e422] [cursor=pointer]
+          - group [ref=f17e427]:
+            - generic "Can I update the site myself after launch?" [ref=f17e428] [cursor=pointer]
+          - group [ref=f17e433]:
+            - generic "Who owns the domain and hosting?" [ref=f17e434] [cursor=pointer]
+          - group [ref=f17e439]:
+            - generic "Will a redesign affect our search rankings?" [ref=f17e440] [cursor=pointer]
+          - group [ref=f17e445]:
+            - generic "Is working with a one-person studio a risk?" [ref=f17e446] [cursor=pointer]
+    - region [ref=f17e451]:
+      - generic [ref=f17e452]:
+        - generic [ref=f17e453]:
+          - paragraph [ref=f17e454]: Contact
+          - heading "Let’s talk about your project." [level=2] [ref=f17e455]
+          - paragraph [ref=f17e456]: Tell us in a few sentences what you want to build. Your message goes straight to the studio and is answered personally.
+          - heading "Reach out directly" [level=3] [ref=f17e457]
+          - list [ref=f17e458]:
+            - listitem [ref=f17e459]:
+              - link "Email salihefeggl@gmail.com" [ref=f17e460] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+                - generic [ref=f17e464]:
+                  - generic [ref=f17e465]: Email
+                  - generic [ref=f17e466]: salihefeggl@gmail.com
+            - listitem [ref=f17e469]:
+              - link "WhatsApp 0552 479 32 33" [ref=f17e470] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+                - generic [ref=f17e474]:
+                  - generic [ref=f17e475]: WhatsApp
+                  - generic [ref=f17e476]: 0552 479 32 33
+            - listitem [ref=f17e479]:
+              - link "Phone 0552 479 32 33" [ref=f17e480] [cursor=pointer]:
+                - /url: tel:+905524793233
+                - generic [ref=f17e484]:
+                  - generic [ref=f17e485]: Phone
+                  - generic [ref=f17e486]: 0552 479 32 33
+        - generic [ref=f17e492]:
+          - generic [ref=f17e494]:
+            - text: Website
+            - textbox [ref=f17e495]
+          - generic [ref=f17e496]:
+            - generic [ref=f17e497]: Your name
+            - textbox "Your name" [ref=f17e498]
+          - generic [ref=f17e499]:
+            - generic [ref=f17e500]: Your email
+            - textbox "Your email" [ref=f17e501]
+          - generic [ref=f17e502]:
+            - generic [ref=f17e503]: Company (optional)
+            - textbox "Company (optional)" [ref=f17e504]
+          - generic [ref=f17e505]:
+            - generic [ref=f17e506]: Project type
+            - combobox "Project type" [ref=f17e508] [cursor=pointer]:
+              - option "Choose an option" [disabled] [selected]
+              - option "Corporate website"
+              - option "Landing page"
+              - option "E-commerce"
+              - option "Web application"
+              - option "UI/UX design"
+              - option "Redesign"
+              - option "SEO and performance"
+              - option "Care and support"
+              - option "Not sure yet"
+          - generic [ref=f17e509]:
+            - generic [ref=f17e510]: Tell us briefly about your project
+            - paragraph [ref=f17e511]: Your goal, your current site if any, and the timing you have in mind are enough.
+            - textbox "Tell us briefly about your project" [ref=f17e512]
+          - generic [ref=f17e513]:
+            - paragraph [ref=f17e514]: The information in this form is used only to reply to your request.
+            - button "Send message" [ref=f17e515]
+  - contentinfo [ref=f17e520]:
+    - generic [ref=f17e521]:
+      - generic [ref=f17e522]:
+        - generic [ref=f17e523]:
+          - link "StackWD home" [ref=f17e524] [cursor=pointer]:
+            - /url: /en/
+            - generic [ref=f17e525]: StackWD
+          - paragraph [ref=f17e531]: Websites built layer by layer.
+        - navigation [ref=f17e532]:
+          - heading "Sitemap" [level=2] [ref=f17e533]
+          - list [ref=f17e534]:
+            - listitem [ref=f17e535]:
+              - link "Services" [ref=f17e536] [cursor=pointer]:
+                - /url: /en/#services
+            - listitem [ref=f17e537]:
+              - link "Work" [ref=f17e538] [cursor=pointer]:
+                - /url: /en/#work
+            - listitem [ref=f17e539]:
+              - link "Process" [ref=f17e540] [cursor=pointer]:
+                - /url: /en/#process
+            - listitem [ref=f17e541]:
+              - link "About" [ref=f17e542] [cursor=pointer]:
+                - /url: /en/#about
+            - listitem [ref=f17e543]:
+              - link "FAQ" [ref=f17e544] [cursor=pointer]:
+                - /url: /en/#faq
+            - listitem [ref=f17e545]:
+              - link "Contact" [ref=f17e546] [cursor=pointer]:
+                - /url: /en/#contact
+        - generic [ref=f17e547]:
+          - heading "Contact" [level=2] [ref=f17e548]
+          - list [ref=f17e549]:
+            - listitem [ref=f17e550]:
+              - link "salihefeggl@gmail.com" [ref=f17e551] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+            - listitem [ref=f17e554]:
+              - link "WhatsApp" [ref=f17e555] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+            - listitem [ref=f17e558]:
+              - link "0552 479 32 33" [ref=f17e559] [cursor=pointer]:
+                - /url: tel:+905524793233
+      - paragraph [aria-hidden]: StackWD
+      - generic [ref=f17e562]:
+        - paragraph [ref=f17e563]: © 2026 StackWD. All rights reserved.
+        - generic [ref=f17e564]:
+          - list "Language" [ref=f17e565]:
+            - listitem [ref=f17e566]:
+              - link "Türkçe" [ref=f17e567] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f17e568]:
+              - link "English" [ref=f17e569] [cursor=pointer]:
+                - /url: /en/
+            - listitem [ref=f17e570]:
+              - link "Español" [ref=f17e571] [cursor=pointer]:
+                - /url: /es/
+          - button "Switch to light theme" [ref=f17e572]
+          - link "Back to top" [ref=f17e575] [cursor=pointer]:
+            - /url: "#top"

@@ -1,0 +1,129 @@
+- generic [active] [ref=f12e1]:
+  - banner [ref=f12e2]:
+    - link "İçeriğe geç" [ref=f12e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f12e4]:
+      - link "StackWD ana sayfa" [ref=f12e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f12e6]: StackWD
+      - navigation "Ana menü" [ref=f12e12]:
+        - list [ref=f12e13]:
+          - listitem [ref=f12e14]:
+            - link "Hizmetler" [ref=f12e15] [cursor=pointer]:
+              - /url: /#services
+          - listitem [ref=f12e16]:
+            - link "İşler" [ref=f12e17] [cursor=pointer]:
+              - /url: /#work
+          - listitem [ref=f12e18]:
+            - link "Süreç" [ref=f12e19] [cursor=pointer]:
+              - /url: /#process
+          - listitem [ref=f12e20]:
+            - link "Hakkında" [ref=f12e21] [cursor=pointer]:
+              - /url: /#about
+      - generic [ref=f12e22]:
+        - group [ref=f12e23]:
+          - generic "Dil seçimi, TR" [ref=f12e24] [cursor=pointer]:
+            - generic [ref=f12e27]: Dil seçimi,
+            - generic [ref=f12e28]: TR
+        - button "Açık temaya geç" [ref=f12e29]
+        - link "Projenizi konuşalım" [ref=f12e33] [cursor=pointer]:
+          - /url: /#contact
+  - main [ref=f12e38]:
+    - article [ref=f12e39]:
+      - generic [ref=f12e40]:
+        - link "Tüm işler" [ref=f12e41] [cursor=pointer]:
+          - /url: /#work
+        - generic [ref=f12e44]: Konsept çalışma
+        - heading "Tane Kahve" [level=1] [ref=f12e46]
+        - paragraph [ref=f12e47]: Nitelikli kahve kavurucusu için ürünün hikâyesini satın alma deneyimiyle birleştiren bir e-ticaret konsepti.
+        - generic [ref=f12e48]:
+          - generic [ref=f12e49]:
+            - term [ref=f12e50]: Müşteri
+            - definition [ref=f12e51]: Konsept çalışma
+          - generic [ref=f12e52]:
+            - term [ref=f12e53]: Sektör
+            - definition [ref=f12e54]: Gıda ve içecek
+          - generic [ref=f12e55]:
+            - term [ref=f12e56]: Yıl
+            - definition [ref=f12e57]: "2026"
+          - generic [ref=f12e58]:
+            - term [ref=f12e59]: Hizmetler
+            - definition [ref=f12e60]: E-ticaret, UI/UX tasarım
+      - img "Tane Kahve konsept mağazasının masaüstü ve mobil ana sayfası" [ref=f12e64]
+      - generic [ref=f12e66]:
+        - blockquote [ref=f12e67]:
+          - paragraph [ref=f12e68]: Bu bir konsept çalışmadır. Marka, içerikler ve arayüzdeki kişiler kurgusaldır. Gerçek bir müşteri için hazırlanmamıştır.
+        - heading "Problem" [level=2] [ref=f12e69]
+        - paragraph [ref=f12e70]: Küçük kavurucuların online mağazaları genellikle hazır temalarla kurulur ve her kahveyi aynı ürün kartına indirger. Oysa nitelikli kahvede alıcıyı ikna eden şey menşe, rakım ve tat notlarıdır. Bu bilgiyi öne çıkaran, ama satın almayı zorlaştırmayan bir mağaza gerekiyordu.
+        - heading "Yaklaşım" [level=2] [ref=f12e71]
+        - paragraph [ref=f12e72]: Ana sayfanın merkezine haftanın kavrumunu koyduk. Menşe, rakım ve işleme bilgisi fiyatla aynı bakışta okunuyor. Ürün kartlarında tat notları ve kavrum derecesi küçük etiketlerle gösterildi, filtreler tek satırda tutuldu.
+        - paragraph [ref=f12e73]:
+          - img "Ürün listesi, filtreler ve ürün kartları" [ref=f12e74]
+        - paragraph [ref=f12e75]: Renk paleti orman yeşili ve kehribar tonlarıyla kahvenin kendisini değil, geldiği coğrafyayı anlatıyor. Paket görselleri, gerçek ürün fotoğrafları gelene kadar mağazanın tutarlı görünmesini sağlayan çizimlerdir.
+        - heading "Sonuç" [level=2] [ref=f12e76]
+        - paragraph [ref=f12e77]: Mobilde kampanya bandı, sepet ve ana eylem ilk ekranda kalıyor. Ürün listesi tek sütunda, dokunmaya uygun büyüklükte ilerliyor. Konsept, ürün sayfası ve abonelik akışına genişletilebilecek bir bileşen seti sunuyor.
+        - paragraph [ref=f12e78]:
+          - 'img "Mağazanın mobilde üç ekranı: ana sayfa, ürün listesi ve ürün kartları" [ref=f12e79]'
+      - navigation "Sonraki vaka" [ref=f12e80]:
+        - link "Sonraki vaka Denge Fizyoterapi" [ref=f12e81] [cursor=pointer]:
+          - /url: /isler/denge-fizyoterapi/
+          - text: Sonraki vaka
+          - generic [ref=f12e82]: Denge Fizyoterapi
+  - contentinfo [ref=f12e87]:
+    - generic [ref=f12e88]:
+      - generic [ref=f12e89]:
+        - generic [ref=f12e90]:
+          - link "StackWD ana sayfa" [ref=f12e91] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f12e92]: StackWD
+          - paragraph [ref=f12e98]: Katman katman kurulan web siteleri.
+        - navigation [ref=f12e99]:
+          - heading "Site haritası" [level=2] [ref=f12e100]
+          - list [ref=f12e101]:
+            - listitem [ref=f12e102]:
+              - link "Hizmetler" [ref=f12e103] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=f12e104]:
+              - link "İşler" [ref=f12e105] [cursor=pointer]:
+                - /url: /#work
+            - listitem [ref=f12e106]:
+              - link "Süreç" [ref=f12e107] [cursor=pointer]:
+                - /url: /#process
+            - listitem [ref=f12e108]:
+              - link "Hakkında" [ref=f12e109] [cursor=pointer]:
+                - /url: /#about
+            - listitem [ref=f12e110]:
+              - link "SSS" [ref=f12e111] [cursor=pointer]:
+                - /url: /#faq
+            - listitem [ref=f12e112]:
+              - link "İletişim" [ref=f12e113] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=f12e114]:
+          - heading "İletişim" [level=2] [ref=f12e115]
+          - list [ref=f12e116]:
+            - listitem [ref=f12e117]:
+              - link "salihefeggl@gmail.com" [ref=f12e118] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+            - listitem [ref=f12e121]:
+              - link "WhatsApp" [ref=f12e122] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+            - listitem [ref=f12e125]:
+              - link "0552 479 32 33" [ref=f12e126] [cursor=pointer]:
+                - /url: tel:+905524793233
+      - paragraph [aria-hidden]: StackWD
+      - generic [ref=f12e129]:
+        - paragraph [ref=f12e130]: © 2026 StackWD. Tüm hakları saklıdır.
+        - generic [ref=f12e131]:
+          - list "Dil seçimi" [ref=f12e132]:
+            - listitem [ref=f12e133]:
+              - link "Türkçe" [ref=f12e134] [cursor=pointer]:
+                - /url: /isler/tane-kahve/
+            - listitem [ref=f12e135]:
+              - link "English" [ref=f12e136] [cursor=pointer]:
+                - /url: /en/work/tane-kahve/
+            - listitem [ref=f12e137]:
+              - link "Español" [ref=f12e138] [cursor=pointer]:
+                - /url: /es/proyectos/tane-kahve/
+          - button "Açık temaya geç" [ref=f12e139]
+          - link "Başa dön" [ref=f12e142] [cursor=pointer]:
+            - /url: "#top"

@@ -1,0 +1,200 @@
+---
+/**
+ * Vaka detay sayfası (BASIC referansı). Kurgu sabittir:
+ * giriş ve künye, büyük kapak görseli, Markdown gövdesi (Problem, Yaklaşım, Sonuç), sonraki vaka.
+ */
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import CaseCover from './CaseCover.astro';
+import Icon from './Icon.astro';
+import { content } from '../i18n/content';
+import type { Lang } from '../i18n/ui';
+import { sectionHref, sectionIds, workPath } from '../i18n/utils';
+import { caseAlternates, slugOf, type WorkEntry } from '../lib/work';
+
+interface Props {
+  lang: Lang;
+  entry: WorkEntry;
+  next?: WorkEntry;
+}
+const { lang, entry, next } = Astro.props;
+const c = content[lang];
+const d = entry.data;
+const { Content } = await render(entry);
+const alternates = await caseAlternates(slugOf(entry));
+---
+
+<BaseLayout lang={lang} title={`${d.title} | StackWD`} description={d.summary} alternates={alternates} noindex={d.placeholder}>
+  <Header lang={lang} alternates={alternates} />
+  <main id="main" tabindex="-1" class="outline-none">
+    <article>
+      <header class="container-page pt-[calc(var(--header-h)+48px)] lg:pt-[calc(var(--header-h)+72px)]" id="top">
+        <a href={sectionHref(lang, sectionIds.work)} class="enter inline-flex min-h-11 items-center gap-2 text-small text-body hover:text-ink">
+          <Icon name="arrow-left" class="size-4" />
+          {c.caseStudy.back}
+        </a>
+
+        <div class="enter mt-8 flex flex-wrap gap-2" style="--i:1">
+          {d.placeholder && <span class="badge">{c.work.placeholder}</span>}
+          {d.concept && <span class="badge badge-accent">{c.work.concept}</span>}
+        </div>
+
+        <h1 class="enter mt-5 max-w-[18ch] text-display-lg lg:text-display-xl" style="--i:2">{d.title}</h1>
+        <p class="enter mt-6 max-w-[56ch] text-lead text-body" style="--i:3">{d.summary}</p>
+
+        <dl class="enter mt-12 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-hairline pt-6 md:grid-cols-4" style="--i:4">
+          <div>
+            <dt class="text-small text-muted">{c.caseStudy.client}</dt>
+            <dd class="mt-1 text-ink">{d.concept ? c.work.concept : (d.client ?? '-')}</dd>
+          </div>
+          <div>
+            <dt class="text-small text-muted">{c.caseStudy.sector}</dt>
+            <dd class="mt-1 text-ink">{d.sector}</dd>
+          </div>
+          <div>
+            <dt class="text-small text-muted">{c.caseStudy.year}</dt>
+            <dd class="mt-1 text-ink">{d.year}</dd>
+          </div>
+          <div>
+            <dt class="text-small text-muted">{c.caseStudy.services}</dt>
+            <dd class="mt-1 text-ink">{d.services.join(', ')}</dd>
+          </div>
+        </dl>
+      </header>
+
+      <div class="container-page mt-14 lg:mt-20">
+        <div class="rounded-card border border-hairline bg-sunk p-1.5">
+          <div class="aspect-[4/3] overflow-hidden rounded-[10px] md:aspect-[16/9]">
+            <CaseCover cover={d.cover} alt={d.coverAlt} tone={d.tone} pendingLabel={c.work.coverPending} priority sizes="(min-width: 1344px) 1280px, 94vw" />
+          </div>
+        </div>
+      </div>
+
+      {
+        d.placeholder && (
+          <div class="container-page mt-10">
+            <p class="flex items-start gap-3 rounded-input border border-hairline-strong px-4 py-3 text-small text-body lg:mx-auto lg:max-w-[calc(7/12*100%)]" role="note">
+              <Icon name="warning-circle" class="mt-0.5 size-5 shrink-0 text-accent" />
+              {c.caseStudy.placeholderNotice}
+            </p>
+          </div>
+        )
+      }
+
+      <div class="container-page mt-16 grid lg:mt-24 lg:grid-cols-12">
+        <div class="case-body lg:col-span-7 lg:col-start-4">
+          <Content />
+        </div>
+      </div>
+
+      {
+        next && next.id !== entry.id && (
+          <nav class="container-page mt-(--section)" aria-label={c.caseStudy.next}>
+            <a href={workPath(lang, slugOf(next))} class="group block border-t border-hairline pt-8 pb-4">
+              <span class="text-small text-muted">{c.caseStudy.next}</span>
+              <span class="mt-3 flex items-center justify-between gap-6">
+                <span class="font-display text-display-lg text-ink">{next.data.title}</span>
+                <span class="grid size-14 shrink-0 place-items-center rounded-full border border-hairline-strong transition-colors duration-(--dur-base) group-hover:border-accent group-hover:bg-accent group-hover:text-on-accent">
+                  <Icon name="arrow-right" class="size-6" />
+                </span>
+              </span>
+            </a>
+          </nav>
+        )
+      }
+    </article>
+  </main>
+  <Footer lang={lang} alternates={alternates} />
+</BaseLayout>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    height: 26px;
+    padding-inline: 10px;
+    border-radius: 9999px;
+    border: 1px solid var(--hairline-strong);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .badge-accent {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .case-body :global(h2) {
+    margin-top: 4rem;
+    font-size: var(--text-display-md);
+    line-height: var(--text-display-md--line-height);
+    letter-spacing: var(--text-display-md--letter-spacing);
+    font-weight: var(--text-display-md--font-weight);
+  }
+  .case-body :global(h2:first-child) {
+    margin-top: 0;
+  }
+  .case-body :global(h3) {
+    margin-top: 2.5rem;
+    font-size: var(--text-title);
+    font-weight: 550;
+  }
+  .case-body :global(p),
+  .case-body :global(ul),
+  .case-body :global(ol) {
+    margin-top: 1.25rem;
+    font-size: var(--text-lead);
+    line-height: var(--text-lead--line-height);
+    color: var(--body);
+  }
+  .case-body :global(ul) {
+    list-style: disc;
+    padding-left: 1.25em;
+  }
+  .case-body :global(ol) {
+    list-style: decimal;
+    padding-left: 1.25em;
+  }
+  .case-body :global(a) {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  /* Görseller metin sütunundan taşar ve konteyner genişliğine yayılır (BASIC referansı). */
+  .case-body :global(p:has(> img)) {
+    margin-block: 3rem;
+  }
+  .case-body :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--hairline);
+  }
+  @media (min-width: 1024px) {
+    .case-body :global(p:has(> img)) {
+      margin-block: 4.5rem;
+      margin-left: calc(-3 / 7 * 100%);
+      width: calc(12 / 7 * 100%);
+    }
+  }
+  .case-body :global(blockquote) {
+    display: flex;
+    gap: 12px;
+    padding: 14px 18px;
+    border: 1px solid var(--hairline-strong);
+    border-radius: var(--radius-input);
+    margin-bottom: 3.5rem;
+  }
+  .case-body :global(blockquote p) {
+    margin: 0;
+    font-size: var(--text-small);
+    line-height: var(--text-small--line-height);
+  }
+  .case-body :global(strong) {
+    color: var(--ink);
+    font-weight: 600;
+  }
+</style>

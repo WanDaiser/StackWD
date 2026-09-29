@@ -1,0 +1,55 @@
+---
+/**
+ * 404: katmanlardan biri eksik. Türkçe ana metin, altında İngilizce ve İspanyolca kısa yönlendirme.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Button from '../components/Button.astro';
+import { content } from '../i18n/content';
+import { homePath } from '../i18n/utils';
+
+const c = content.tr.notFound;
+const ISO = 'matrix(0.866 0.5 -0.866 0.5 0 0)';
+---
+
+<BaseLayout lang="tr" title={c.metaTitle} description={c.text} noindex>
+  <Header lang="tr" />
+  <main id="main" tabindex="-1" class="outline-none">
+    <section class="container-page grid min-h-[100dvh] items-center gap-12 pt-[calc(var(--header-h)+48px)] pb-20 lg:grid-cols-12">
+      <div class="lg:col-span-6">
+        <p class="eyebrow enter">404</p>
+        <h1 class="enter mt-5 max-w-[14ch] text-display-lg" style="--i:1">{c.title}</h1>
+        <p class="enter mt-6 max-w-[40ch] text-lead text-body" style="--i:2">{c.text}</p>
+        <div class="enter mt-9" style="--i:3">
+          <Button href={homePath('tr')} icon="arrow-left">{c.cta}</Button>
+        </div>
+        <ul class="enter mt-12 grid gap-2 border-t border-hairline pt-6 text-small text-muted" style="--i:4" role="list">
+          <li lang="en">{content.en.notFound.text} <a href={homePath('en')} class="text-ink underline underline-offset-4">{content.en.notFound.cta}</a></li>
+          <li lang="es">{content.es.notFound.text} <a href={homePath('es')} class="text-ink underline underline-offset-4">{content.es.notFound.cta}</a></li>
+        </ul>
+      </div>
+
+      <svg class="enter mx-auto w-full max-w-[460px] lg:col-span-5 lg:col-start-8" style="--i:2" viewBox="0 0 420 460" aria-hidden="true">
+        {
+          [0, 1, 2, 3].map((i) => (
+            <g transform={`translate(210 ${110 + i * 90}) ${ISO}`}>
+              <rect
+                x="-110"
+                y="-110"
+                width="220"
+                height="220"
+                rx="6"
+                fill={i === 1 ? 'none' : 'var(--surface)'}
+                fill-opacity="0.85"
+                stroke={i === 1 ? 'var(--accent)' : 'var(--hairline-strong)'}
+                stroke-width="1.2"
+                stroke-dasharray={i === 1 ? '6 8' : undefined}
+                vector-effect="non-scaling-stroke"
+              />
+            </g>
+          ))
+        }
+      </svg>
+    </section>
+  </main>
+</BaseLayout>

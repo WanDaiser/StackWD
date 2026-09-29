@@ -1,0 +1,68 @@
+---
+/**
+ * Hero: editoryal düzen (Locomotive referansı).
+ * Büyük başlık tam genişlikte, altında solda alt metin ve tek CTA, sağda katman kompozisyonu.
+ * En fazla dört metin öğesi: eyebrow, başlık, alt metin, CTA.
+ */
+import Button from './Button.astro';
+import HeroLayers from './HeroLayers.astro';
+import type { Lang } from '../i18n/ui';
+import { sectionHref, sectionIds, useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const titleLines = t('hero.title').split('|');
+---
+
+<section id="top" class="hero relative isolate overflow-clip" aria-labelledby="hero-title">
+  <div class="hero-glow pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
+
+  <div class="container-page pt-[calc(var(--header-h)+48px)] pb-20 lg:pt-[calc(var(--header-h)+64px)] lg:pb-16">
+    <p class="eyebrow enter" style="--i:0">{t('hero.eyebrow')}</p>
+
+    <h1 id="hero-title" class="hero-title enter relative z-10 mt-6 text-display-xl" style="--i:1">
+      {
+        titleLines.map((line, i) => (
+          <>
+            {i > 0 && <br class="hidden lg:block" />}
+            {i > 0 && ' '}
+            <span>{line}</span>
+          </>
+        ))
+      }
+    </h1>
+
+    <div class="mt-8 grid items-start gap-y-10 lg:mt-12 lg:grid-cols-12 lg:gap-x-6">
+      <div class="relative z-10 lg:col-span-5">
+        <p class="enter max-w-[40ch] text-lead text-body" style="--i:2">
+          {t('hero.lead')}
+        </p>
+        <div class="enter mt-9" style="--i:3">
+          <Button href={sectionHref(lang, sectionIds.contact)}>{t('cta.contact')}</Button>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-[520px] sm:max-w-[560px] lg:col-span-6 lg:col-start-7 lg:-mt-32 lg:max-w-none xl:-mt-36">
+        <HeroLayers lang={lang} />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-title {
+    text-wrap: wrap;
+  }
+  .hero-glow {
+    background:
+      radial-gradient(
+        55% 50% at 76% 62%,
+        color-mix(in oklab, var(--accent) var(--glow-strength), transparent),
+        transparent 70%
+      ),
+      radial-gradient(40% 40% at 8% 10%, color-mix(in oklab, var(--surface) 70%, transparent), transparent 70%);
+  }
+</style>

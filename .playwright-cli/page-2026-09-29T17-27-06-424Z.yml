@@ -1,0 +1,110 @@
+- generic [active] [ref=f14e1]:
+  - banner [ref=f14e2]:
+    - link "Skip to content" [ref=f14e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f14e4]:
+      - link "StackWD home" [ref=f14e5] [cursor=pointer]:
+        - /url: /en/
+        - generic [ref=f14e6]: StackWD
+      - generic [ref=f14e12]:
+        - button "Switch to dark theme" [ref=f14e13]
+        - button "Open menu" [ref=f14e16]
+  - main [ref=f14e19]:
+    - article [ref=f14e20]:
+      - generic [ref=f14e21]:
+        - link "All work" [ref=f14e22] [cursor=pointer]:
+          - /url: /en/#work
+        - generic [ref=f14e25]: Concept work
+        - heading "Denge Physiotherapy" [level=1] [ref=f14e27]
+        - paragraph [ref=f14e28]: A web application concept for a physiotherapy clinic that brings the session calendar and the client booking flow into one place.
+        - generic [ref=f14e29]:
+          - generic [ref=f14e30]:
+            - term [ref=f14e31]: Client
+            - definition [ref=f14e32]: Concept work
+          - generic [ref=f14e33]:
+            - term [ref=f14e34]: Sector
+            - definition [ref=f14e35]: Healthcare
+          - generic [ref=f14e36]:
+            - term [ref=f14e37]: Year
+            - definition [ref=f14e38]: "2026"
+          - generic [ref=f14e39]:
+            - term [ref=f14e40]: Services
+            - definition [ref=f14e41]: Web application, UI/UX design
+      - img "Weekly calendar and mobile booking screen of the Denge booking app" [ref=f14e45]
+      - generic [ref=f14e47]:
+        - blockquote [ref=f14e48]:
+          - paragraph [ref=f14e49]: This is concept work. The brand, the content and the people shown in the interface are fictional. It was not made for a real client.
+        - heading "Problem" [level=2] [ref=f14e50]
+        - paragraph [ref=f14e51]: Clinics often manage bookings across phone calls, messages and a paper diary. That leads to double bookings, empty slots and late reminders. The team needed to see the week at a glance, and clients needed to book in a few taps.
+        - heading "Approach" [level=2] [ref=f14e52]
+        - paragraph [ref=f14e53]: On the clinic side, the weekly calendar became the main screen. Session types are distinguished by color and a written label together, not by color alone, so users who find colors hard to tell apart can still see the difference.
+        - paragraph [ref=f14e54]:
+          - img "Weekly session calendar of the clinic team" [ref=f14e55]
+        - paragraph [ref=f14e56]: The new booking panel stays open next to the calendar. Taken slots are struck through and cannot be selected, which prevents double bookings before they happen.
+        - heading "Outcome" [level=2] [ref=f14e57]
+        - paragraph [ref=f14e58]: "The client side is a three-step mobile flow: service, date and time, confirmation. Each step asks for one decision, and the change policy is stated clearly before confirming. The concept joins clinic management and the client experience in one design system."
+        - paragraph [ref=f14e59]:
+          - img "Mobile screen where the client picks a time, next to the new booking panel of the clinic" [ref=f14e60]
+      - navigation "Next case" [ref=f14e61]:
+        - link "Next case Kıyı Architecture" [ref=f14e62] [cursor=pointer]:
+          - /url: /en/work/kiyi-mimarlik/
+          - text: Next case
+          - generic [ref=f14e63]: Kıyı Architecture
+  - contentinfo [ref=f14e68]:
+    - generic [ref=f14e69]:
+      - generic [ref=f14e70]:
+        - generic [ref=f14e71]:
+          - link "StackWD home" [ref=f14e72] [cursor=pointer]:
+            - /url: /en/
+            - generic [ref=f14e73]: StackWD
+          - paragraph [ref=f14e79]: Websites built layer by layer.
+        - navigation [ref=f14e80]:
+          - heading "Sitemap" [level=2] [ref=f14e81]
+          - list [ref=f14e82]:
+            - listitem [ref=f14e83]:
+              - link "Services" [ref=f14e84] [cursor=pointer]:
+                - /url: /en/#services
+            - listitem [ref=f14e85]:
+              - link "Work" [ref=f14e86] [cursor=pointer]:
+                - /url: /en/#work
+            - listitem [ref=f14e87]:
+              - link "Process" [ref=f14e88] [cursor=pointer]:
+                - /url: /en/#process
+            - listitem [ref=f14e89]:
+              - link "About" [ref=f14e90] [cursor=pointer]:
+                - /url: /en/#about
+            - listitem [ref=f14e91]:
+              - link "FAQ" [ref=f14e92] [cursor=pointer]:
+                - /url: /en/#faq
+            - listitem [ref=f14e93]:
+              - link "Contact" [ref=f14e94] [cursor=pointer]:
+                - /url: /en/#contact
+        - generic [ref=f14e95]:
+          - heading "Contact" [level=2] [ref=f14e96]
+          - list [ref=f14e97]:
+            - listitem [ref=f14e98]:
+              - link "salihefeggl@gmail.com" [ref=f14e99] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+            - listitem [ref=f14e102]:
+              - link "WhatsApp" [ref=f14e103] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+            - listitem [ref=f14e106]:
+              - link "0552 479 32 33" [ref=f14e107] [cursor=pointer]:
+                - /url: tel:+905524793233
+      - paragraph [aria-hidden]: StackWD
+      - generic [ref=f14e110]:
+        - paragraph [ref=f14e111]: © 2026 StackWD. All rights reserved.
+        - generic [ref=f14e112]:
+          - list "Language" [ref=f14e113]:
+            - listitem [ref=f14e114]:
+              - link "Türkçe" [ref=f14e115] [cursor=pointer]:
+                - /url: /isler/denge-fizyoterapi/
+            - listitem [ref=f14e116]:
+              - link "English" [ref=f14e117] [cursor=pointer]:
+                - /url: /en/work/denge-fizyoterapi/
+            - listitem [ref=f14e118]:
+              - link "Español" [ref=f14e119] [cursor=pointer]:
+                - /url: /es/proyectos/denge-fizyoterapi/
+          - button "Switch to dark theme" [ref=f14e120]
+          - link "Back to top" [ref=f14e123] [cursor=pointer]:
+            - /url: "#top"

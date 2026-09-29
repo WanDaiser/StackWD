@@ -1,0 +1,17 @@
+---
+/** Bölüm başlığı kalıbı: isteğe bağlı eyebrow, başlık ve altında kısa giriş. Dikey dizilir. */
+interface Props {
+  id: string;
+  title: string;
+  lead?: string;
+  eyebrow?: string;
+  class?: string;
+}
+const { id, title, lead, eyebrow, class: className = '' } = Astro.props;
+---
+
+<header class:list={['reveal max-w-4xl', className]}>
+  {eyebrow && <p class="eyebrow mb-5">{eyebrow}</p>}
+  <h2 id={id} class="text-display-lg">{title}</h2>
+  {lead && <p class="mt-6 max-w-[56ch] text-lead text-body">{lead}</p>}
+</header>

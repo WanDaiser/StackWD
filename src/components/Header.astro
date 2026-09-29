@@ -1,0 +1,206 @@
+---
+/**
+ * Sabit üst bar. Kaydırma başlayınca yarı saydam zemin ve alt çizgi alır.
+ * Kaydırma dinleyicisi yerine sayfa başındaki gözcü öğe IntersectionObserver ile izlenir.
+ * Mobilde yerel <dialog> ile tam ekran menü açılır.
+ */
+import Logo from './Logo.astro';
+import Button from './Button.astro';
+import Icon from './Icon.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import LangSwitch from './LangSwitch.astro';
+import type { Lang } from '../i18n/ui';
+import { homePath, sectionHref, sectionIds, useTranslations, type Alternates } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  alternates?: Alternates;
+}
+const { lang, alternates } = Astro.props;
+const t = useTranslations(lang);
+
+const links = [
+  { id: sectionIds.services, label: t('nav.services') },
+  { id: sectionIds.work, label: t('nav.work') },
+  { id: sectionIds.process, label: t('nav.process') },
+  { id: sectionIds.about, label: t('nav.about') },
+];
+const mobileLinks = [...links, { id: sectionIds.faq, label: t('nav.faq') }];
+---
+
+<div id="top-sentinel" class="pointer-events-none absolute top-0 left-0 h-4 w-px" aria-hidden="true"></div>
+
+<header class="site-header fixed inset-x-0 top-0 z-(--z-nav)">
+  <a
+    href="#main"
+    class="absolute top-3 left-3 z-10 -translate-y-24 rounded-full bg-accent px-5 py-3 text-button text-on-accent focus-visible:translate-y-0"
+  >
+    {t('a11y.skip')}
+  </a>
+
+  <div class="container-page flex h-(--header-h) items-center justify-between gap-6">
+    <a href={homePath(lang)} aria-label={t('a11y.home')} class="-m-2 rounded-full p-2">
+      <Logo />
+    </a>
+
+    <nav aria-label={t('a11y.mainNav')} class="hidden lg:block">
+      <ul class="flex items-center gap-7">
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={sectionHref(lang, link.id)}
+                class="nav-link relative py-2 text-small font-medium text-body transition-colors duration-(--dur-fast) hover:text-ink"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-1">
+      <LangSwitch lang={lang} alternates={alternates} class="hidden lg:block" />
+      <ThemeToggle lang={lang} />
+      <div class="ml-3 hidden lg:block">
+        <Button href={sectionHref(lang, sectionIds.contact)}>{t('cta.contact')}</Button>
+      </div>
+      <button
+        type="button"
+        class="menu-open grid size-11 place-items-center rounded-full text-ink hover:bg-sunk lg:hidden"
+        aria-label={t('a11y.menuOpen')}
+        aria-haspopup="dialog"
+        aria-controls="mobile-menu"
+      >
+        <Icon name="list" class="size-6" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<dialog id="mobile-menu" class="mobile-menu" aria-label={t('a11y.mainNav')}>
+  <div class="container-page flex min-h-full flex-col">
+    <div class="flex h-(--header-h) items-center justify-between">
+      <a href={homePath(lang)} aria-label={t('a11y.home')} class="-m-2 rounded-full p-2">
+        <Logo />
+      </a>
+      <button
+        type="button"
+        autofocus
+        class="menu-close grid size-11 place-items-center rounded-full text-ink hover:bg-sunk"
+        aria-label={t('a11y.menuClose')}
+      >
+        <Icon name="x" class="size-6" />
+      </button>
+    </div>
+
+    <nav aria-label={t('a11y.mainNav')} class="mt-8">
+      <ul class="flex flex-col">
+        {
+          mobileLinks.map((link, i) => (
+            <li class="menu-item border-b border-hairline" style={`--i:${i}`}>
+              <a
+                href={sectionHref(lang, link.id)}
+                class="flex items-center justify-between py-5 font-display text-display-md text-ink"
+              >
+                {link.label}
+                <Icon name="arrow-right" class="size-6 text-muted" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="mt-auto flex flex-col gap-6 py-8">
+      <Button href={sectionHref(lang, sectionIds.contact)} class="w-full justify-between">{t('cta.contact')}</Button>
+      <LangSwitch lang={lang} variant="inline" alternates={alternates} />
+    </div>
+  </div>
+</dialog>
+
+<style>
+  .site-header {
+    transition:
+      background-color var(--dur-base) var(--ease-out),
+      box-shadow var(--dur-base) var(--ease-out);
+  }
+  .site-header[data-scrolled] {
+    background-color: color-mix(in oklab, var(--canvas) 82%, transparent);
+    box-shadow: 0 1px 0 var(--hairline);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .site-header[data-scrolled] {
+      background-color: var(--canvas);
+      backdrop-filter: none;
+    }
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    bottom: 2px;
+    height: 1px;
+    background: currentColor;
+    scale: 0 1;
+    transform-origin: left;
+    transition: scale var(--dur-base) var(--ease-out);
+  }
+  .nav-link:hover::after { scale: 1 1; }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: var(--canvas);
+    color: var(--body);
+    z-index: var(--z-menu);
+  }
+  .mobile-menu::backdrop { background: transparent; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .mobile-menu[open] { animation: menu-in var(--dur-base) var(--ease-out); }
+    .mobile-menu[open] .menu-item {
+      animation: item-in var(--dur-slow) var(--ease-out) both;
+      animation-delay: calc(var(--i) * 50ms + 60ms);
+    }
+  }
+  @keyframes menu-in { from { opacity: 0; } }
+  @keyframes item-in { from { opacity: 0; translate: 0 12px; } }
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>('.site-header');
+  const sentinel = document.getElementById('top-sentinel');
+  if (header && sentinel) {
+    new IntersectionObserver(([entry]) => {
+      header.toggleAttribute('data-scrolled', !entry.isIntersecting);
+    }).observe(sentinel);
+  }
+
+  const menu = document.getElementById('mobile-menu') as HTMLDialogElement | null;
+  const openBtn = document.querySelector<HTMLButtonElement>('.menu-open');
+  const closeBtn = menu?.querySelector<HTMLButtonElement>('.menu-close');
+
+  openBtn?.addEventListener('click', () => menu?.showModal());
+  closeBtn?.addEventListener('click', () => menu?.close());
+  menu?.addEventListener('close', () => openBtn?.focus());
+  // Menüdeki çapa bağlantıları sayfada ilgili bölüme gider ve menüyü kapatır.
+  menu?.querySelectorAll<HTMLAnchorElement>('a[href*="#"]').forEach((a) => {
+    a.addEventListener('click', () => menu.close());
+  });
+  // Masaüstü genişliğine geçilirse menü açık kalmasın.
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
+    if (e.matches && menu?.open) menu.close();
+  });
+</script>

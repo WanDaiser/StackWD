@@ -1,0 +1,357 @@
+- generic [active] [ref=f5e1]:
+  - banner [ref=f5e2]:
+    - link "İçeriğe geç" [ref=f5e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f5e4]:
+      - link "StackWD ana sayfa" [ref=f5e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f5e6]: StackWD
+      - navigation "Ana menü" [ref=f5e12]:
+        - list [ref=f5e13]:
+          - listitem [ref=f5e14]:
+            - link "Hizmetler" [ref=f5e15] [cursor=pointer]:
+              - /url: /#services
+          - listitem [ref=f5e16]:
+            - link "İşler" [ref=f5e17] [cursor=pointer]:
+              - /url: /#work
+          - listitem [ref=f5e18]:
+            - link "Süreç" [ref=f5e19] [cursor=pointer]:
+              - /url: /#process
+          - listitem [ref=f5e20]:
+            - link "Hakkında" [ref=f5e21] [cursor=pointer]:
+              - /url: /#about
+      - generic [ref=f5e22]:
+        - group [ref=f5e23]:
+          - 'generic "Dil seçimi: Türkçe" [ref=f5e24] [cursor=pointer]':
+            - generic [aria-hidden] [ref=f5e27]: TR
+        - button "Açık temaya geç" [ref=f5e28]
+        - link "Projenizi konuşalım" [ref=f5e32] [cursor=pointer]:
+          - /url: /#contact
+  - main [ref=f5e37]:
+    - region [ref=f5e38]:
+      - generic [ref=f5e39]:
+        - paragraph [ref=f5e40]: Web tasarım ve geliştirme
+        - heading "Katman katman kurulan web siteleri." [level=1] [ref=f5e41]
+        - generic [ref=f5e42]:
+          - generic [ref=f5e43]:
+            - paragraph [ref=f5e44]: Strateji, tasarım, kod ve yayın tek elde. İşletmeniz için hızlı, erişilebilir ve uzun ömürlü web siteleri.
+            - link "Projenizi konuşalım" [ref=f5e46] [cursor=pointer]:
+              - /url: /#contact
+          - img "Strateji, arayüz, kod ve yayın katmanlarının üst üste durduğu soyut bir çizim." [ref=f5e52]:
+            - generic [ref=f5e54]: Yayın
+            - generic [ref=f5e65]: Kod
+            - generic [ref=f5e88]:
+              - generic [ref=f5e89]: Aa
+              - generic [ref=f5e98]: Arayüz
+            - generic [ref=f5e99]: Strateji
+    - region [ref=f5e111]:
+      - generic [ref=f5e112]:
+        - generic [ref=f5e113]:
+          - heading "Bir web sitesinin ihtiyaç duyduğu her katman." [level=2] [ref=f5e114]
+          - paragraph [ref=f5e115]: Tek sayfalık bir kampanyadan kapsamlı bir web uygulamasına kadar, fikirden yayına ve sonrasına tüm işi aynı özenle üstleniyoruz.
+        - list [ref=f5e116]:
+          - listitem [ref=f5e117]:
+            - generic [ref=f5e121]:
+              - heading "Kurumsal web sitesi" [level=3] [ref=f5e122]
+              - paragraph [ref=f5e123]: Markanızı doğru anlatan, içeriği kolayca güncellenen ve arama motorlarında bulunabilen çok sayfalı siteler.
+              - paragraph [ref=f5e124]:
+                - generic [ref=f5e125]: "Kapsam:"
+                - text: İçerik mimarisi, Çok dilli yapı, Yönetim paneli
+          - listitem [ref=f5e126]:
+            - generic [ref=f5e130]:
+              - heading "Landing page" [level=3] [ref=f5e131]
+              - paragraph [ref=f5e132]: Kampanya ve lansmanlar için tek bir hedefe odaklanan, hızlı açılan dönüşüm sayfaları.
+              - paragraph [ref=f5e133]:
+                - generic [ref=f5e134]: "Kapsam:"
+                - text: Mesaj kurgusu, Form ve ölçümleme, Test edilebilir yapı
+          - listitem [ref=f5e135]:
+            - generic [ref=f5e139]:
+              - heading "E-ticaret" [level=3] [ref=f5e140]
+              - paragraph [ref=f5e141]: Ürünlerinizi sade ve güven veren bir alışveriş deneyimiyle sunan online mağazalar.
+              - paragraph [ref=f5e142]:
+                - generic [ref=f5e143]: "Kapsam:"
+                - text: Katalog yapısı, Ödeme entegrasyonu, Sipariş akışı
+          - listitem [ref=f5e144]:
+            - generic [ref=f5e148]:
+              - heading "Web uygulaması" [level=3] [ref=f5e149]
+              - paragraph [ref=f5e150]: Randevu, rezervasyon ya da müşteri paneli gibi iş süreçlerinizi tarayıcıya taşıyan özel uygulamalar.
+              - paragraph [ref=f5e151]:
+                - generic [ref=f5e152]: "Kapsam:"
+                - text: Kullanıcı hesapları, Veri tabanı ve API, Yönetim ekranları
+          - listitem [ref=f5e153]:
+            - generic [ref=f5e157]:
+              - heading "UI/UX tasarım" [level=3] [ref=f5e158]
+              - paragraph [ref=f5e159]: Kullanıcı akışlarına dayanan arayüz tasarımı, tasarım sistemi ve geliştirmeye hazır dosyalar.
+              - paragraph [ref=f5e160]:
+                - generic [ref=f5e161]: "Kapsam:"
+                - text: Kullanıcı akışları, Prototip, Tasarım sistemi
+          - listitem [ref=f5e162]:
+            - generic [ref=f5e166]:
+              - heading "Yeniden tasarım" [level=3] [ref=f5e167]
+              - paragraph [ref=f5e168]: Mevcut sitenizi içeriğini ve arama sıralamasını koruyarak modern, hızlı ve tutarlı bir yapıya taşıma.
+              - paragraph [ref=f5e169]:
+                - generic [ref=f5e170]: "Kapsam:"
+                - text: Mevcut durum analizi, SEO geçiş planı, İçerik taşıma
+          - listitem [ref=f5e171]:
+            - generic [ref=f5e175]:
+              - heading "SEO ve performans" [level=3] [ref=f5e176]
+              - paragraph [ref=f5e177]: Yavaş açılan ya da aramada görünmeyen siteler için teknik SEO, hız ve erişilebilirlik iyileştirmeleri.
+              - paragraph [ref=f5e178]:
+                - generic [ref=f5e179]: "Kapsam:"
+                - text: Core Web Vitals, Teknik SEO, Erişilebilirlik denetimi
+          - listitem [ref=f5e180]:
+            - generic [ref=f5e184]:
+              - heading "Bakım ve destek" [level=3] [ref=f5e185]
+              - paragraph [ref=f5e186]: Yayından sonra güncelleme, yedekleme, güvenlik takibi ve küçük geliştirmelerle süreklilik.
+              - paragraph [ref=f5e187]:
+                - generic [ref=f5e188]: "Kapsam:"
+                - text: Güncelleme ve yedek, Güvenlik takibi, İçerik desteği
+    - region [ref=f5e189]:
+      - generic [ref=f5e190]:
+        - generic [ref=f5e191]:
+          - paragraph [ref=f5e192]: Seçili işler
+          - heading "Her proje kendi sorusuyla başlar." [level=2] [ref=f5e193]
+          - paragraph [ref=f5e194]: Her vaka; problemi, yaklaşımı ve sonucu adım adım anlatır.
+        - generic [ref=f5e195]:
+          - article [ref=f5e196]:
+            - generic [ref=f5e197]: Proje görseli eklenecek
+            - generic [ref=f5e209]: Yer tutucu
+            - generic [ref=f5e211]:
+              - heading [level=3] [ref=f5e212]:
+                - link "Kurumsal web sitesi vakası" [ref=f5e213] [cursor=pointer]:
+                  - /url: /isler/ornek-vaka-1/
+              - paragraph [ref=f5e214]: Sektör eklenecek, 2026
+            - paragraph [ref=f5e215]: Bu alan gerçek bir proje ya da açıkça etiketlenmiş bir konsept çalışma ile doldurulacak. Projenin tek cümlelik özeti buraya gelir.
+            - generic [aria-hidden] [ref=f5e216]: Vakayı incele
+          - article [ref=f5e219]:
+            - generic [ref=f5e220]: Proje görseli eklenecek
+            - generic [ref=f5e253]: Yer tutucu
+            - generic [ref=f5e255]:
+              - heading [level=3] [ref=f5e256]:
+                - link "E-ticaret vakası" [ref=f5e257] [cursor=pointer]:
+                  - /url: /isler/ornek-vaka-2/
+              - paragraph [ref=f5e258]: Sektör eklenecek, 2026
+            - paragraph [ref=f5e259]: Bu alan gerçek bir proje ya da açıkça etiketlenmiş bir konsept çalışma ile doldurulacak. Projenin tek cümlelik özeti buraya gelir.
+            - generic [aria-hidden] [ref=f5e260]: Vakayı incele
+          - article [ref=f5e263]:
+            - generic [ref=f5e264]: Proje görseli eklenecek
+            - generic [ref=f5e276]: Yer tutucu
+            - generic [ref=f5e278]:
+              - heading [level=3] [ref=f5e279]:
+                - link "Web uygulaması vakası" [ref=f5e280] [cursor=pointer]:
+                  - /url: /isler/ornek-vaka-3/
+              - paragraph [ref=f5e281]: Sektör eklenecek, 2026
+            - paragraph [ref=f5e282]: Bu alan gerçek bir proje ya da açıkça etiketlenmiş bir konsept çalışma ile doldurulacak. Projenin tek cümlelik özeti buraya gelir.
+            - generic [aria-hidden] [ref=f5e283]: Vakayı incele
+    - region [ref=f5e286]:
+      - generic [ref=f5e287]:
+        - generic [ref=f5e289]:
+          - heading "Dört katman, net bir süreç." [level=2] [ref=f5e290]
+          - paragraph [ref=f5e291]: Her aşamada ne yapılacağı ve sonunda ne teslim edileceği baştan bellidir. Süreç boyunca aynı kişiyle, doğrudan çalışırsınız.
+        - list [ref=f5e293]:
+          - listitem [ref=f5e294]:
+            - generic [ref=f5e305]:
+              - paragraph [ref=f5e306]: Strateji
+              - heading "Keşif" [level=3] [ref=f5e307]
+              - paragraph [ref=f5e308]: İşinizi, hedef kitlenizi ve rakiplerinizi dinleyerek başlarız. Sitenin neyi başarması gerektiğini birlikte netleştiririz.
+              - generic [ref=f5e309]:
+                - generic [ref=f5e310]:
+                  - term [ref=f5e311]: Sizden
+                  - definition [ref=f5e312]: Hedefleriniz, varsa mevcut içerik ve marka dosyaları.
+                - generic [ref=f5e313]:
+                  - term [ref=f5e314]: Teslim
+                  - definition [ref=f5e315]: Kapsam, site haritası ve takvim.
+          - listitem [ref=f5e316]:
+            - generic [ref=f5e327]:
+              - paragraph [ref=f5e328]: Arayüz
+              - heading "Tasarım" [level=3] [ref=f5e329]
+              - paragraph [ref=f5e330]: İçerik mimarisini ve arayüzü önce taslakta, sonra detaylı tasarımda kurarız. Masaüstü ve mobil birlikte tasarlanır.
+              - generic [ref=f5e331]:
+                - generic [ref=f5e332]:
+                  - term [ref=f5e333]: Sizden
+                  - definition [ref=f5e334]: Taslaklar üzerine geri bildirim.
+                - generic [ref=f5e335]:
+                  - term [ref=f5e336]: Teslim
+                  - definition [ref=f5e337]: Onaylı arayüz tasarımı ve tıklanabilir prototip.
+          - listitem [ref=f5e338]:
+            - generic [ref=f5e349]:
+              - paragraph [ref=f5e350]: Kod
+              - heading "Geliştirme" [level=3] [ref=f5e351]
+              - paragraph [ref=f5e352]: Tasarımı hızlı, erişilebilir ve kolay güncellenen bir koda dönüştürürüz. İlerlemeyi canlı bir önizleme adresinden takip edersiniz.
+              - generic [ref=f5e353]:
+                - generic [ref=f5e354]:
+                  - term [ref=f5e355]: Sizden
+                  - definition [ref=f5e356]: Son içerikler ve önizleme üzerindeki notlar.
+                - generic [ref=f5e357]:
+                  - term [ref=f5e358]: Teslim
+                  - definition [ref=f5e359]: Test edilmiş, yayına hazır site.
+          - listitem [ref=f5e360]:
+            - generic [ref=f5e371]:
+              - paragraph [ref=f5e372]: Yayın
+              - heading "Yayın" [level=3] [ref=f5e373]
+              - paragraph [ref=f5e374]: Alan adı, sunucu, analitik ve arama motoru ayarlarını yapıp siteyi yayına alırız. Destek yayından sonra da sürer.
+              - generic [ref=f5e375]:
+                - generic [ref=f5e376]:
+                  - term [ref=f5e377]: Sizden
+                  - definition [ref=f5e378]: Alan adı erişimi ve son onay.
+                - generic [ref=f5e379]:
+                  - term [ref=f5e380]: Teslim
+                  - definition [ref=f5e381]: Canlı site, kullanım rehberi ve bakım seçenekleri.
+    - region [ref=f5e382]:
+      - generic [ref=f5e383]:
+        - generic [ref=f5e384]:
+          - heading "Küçük stüdyo, doğrudan iletişim." [level=2] [ref=f5e385]
+          - paragraph [ref=f5e386]: StackWD tek kişilik bir stüdyo. Projenizi baştan sona aynı kişi tasarlar, geliştirir ve yayına alır.
+          - paragraph [ref=f5e387]: Aracı katman olmadığı için kararlar hızlı alınır, bilgi el değiştirirken kaybolmaz ve kime ulaşacağınızı her zaman bilirsiniz. Stüdyo, markanızın dijital yüzünü uzun süre taşıyacak sağlam ve sade işler üretmek için var.
+        - generic [ref=f5e388]:
+          - heading "Çalışma ilkeleri" [level=3] [ref=f5e389]
+          - generic [ref=f5e390]:
+            - generic [ref=f5e391]:
+              - term [ref=f5e392]: Doğrudan iletişim
+              - definition [ref=f5e393]: Projenin her aşamasında aynı kişiyle, aracısız konuşursunuz.
+            - generic [ref=f5e394]:
+              - term [ref=f5e395]: Ölçülebilir kalite
+              - definition [ref=f5e396]: Hız, erişilebilirlik ve SEO zevke değil ölçüme dayanır ve yayından önce test edilir.
+            - generic [ref=f5e397]:
+              - term [ref=f5e398]: Şeffaflık
+              - definition [ref=f5e399]: Kapsam, takvim ve maliyet baştan yazılı olarak netleşir.
+            - generic [ref=f5e400]:
+              - term [ref=f5e401]: Sahiplik sizde
+              - definition [ref=f5e402]: Alan adı, içerik ve kaynak kod size aittir. Dilediğiniz zaman başka biriyle devam edebilirsiniz.
+    - region [ref=f5e403]:
+      - generic [ref=f5e404]:
+        - generic [ref=f5e405]:
+          - heading "Sık sorulan sorular" [level=2] [ref=f5e406]
+          - paragraph [ref=f5e407]: Aradığınız yanıt burada yoksa doğrudan yazın.
+        - generic [ref=f5e408]:
+          - group [ref=f5e409]:
+            - generic "Bir web sitesi projesi ne kadar sürer?" [ref=f5e410] [cursor=pointer]
+          - group [ref=f5e415]:
+            - generic "Fiyatlandırma nasıl yapılıyor?" [ref=f5e416] [cursor=pointer]
+          - group [ref=f5e421]:
+            - generic "Site içeriklerini kim hazırlıyor?" [ref=f5e422] [cursor=pointer]
+          - group [ref=f5e427]:
+            - generic "Siteyi yayından sonra kendim güncelleyebilir miyim?" [ref=f5e428] [cursor=pointer]
+          - group [ref=f5e433]:
+            - generic "Alan adı ve barındırma kimin adına olur?" [ref=f5e434] [cursor=pointer]
+          - group [ref=f5e439]:
+            - generic "Mevcut sitemizi yenilersek arama sıralamamız etkilenir mi?" [ref=f5e440] [cursor=pointer]
+          - group [ref=f5e445]:
+            - generic "Tek kişilik bir stüdyoyla çalışmak risk değil mi?" [ref=f5e446] [cursor=pointer]
+    - region [ref=f5e451]:
+      - generic [ref=f5e452]:
+        - generic [ref=f5e453]:
+          - paragraph [ref=f5e454]: İletişim
+          - heading "Projenizi konuşalım." [level=2] [ref=f5e455]
+          - paragraph [ref=f5e456]: Birkaç cümleyle ne yapmak istediğinizi anlatın. Mesajınız doğrudan stüdyoya ulaşır ve bizzat yanıtlanır.
+          - heading "Doğrudan ulaşın" [level=3] [ref=f5e457]
+          - list [ref=f5e458]:
+            - listitem [ref=f5e459]:
+              - link "E-posta salihefeggl@gmail.com" [ref=f5e460] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+                - generic [ref=f5e464]:
+                  - generic [ref=f5e465]: E-posta
+                  - generic [ref=f5e466]: salihefeggl@gmail.com
+            - listitem [ref=f5e469]:
+              - link "WhatsApp 0552 479 32 33" [ref=f5e470] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+                - generic [ref=f5e474]:
+                  - generic [ref=f5e475]: WhatsApp
+                  - generic [ref=f5e476]: 0552 479 32 33
+            - listitem [ref=f5e479]:
+              - link "Telefon 0552 479 32 33" [ref=f5e480] [cursor=pointer]:
+                - /url: tel:+905524793233
+                - generic [ref=f5e484]:
+                  - generic [ref=f5e485]: Telefon
+                  - generic [ref=f5e486]: 0552 479 32 33
+        - generic [ref=f5e492]:
+          - generic [ref=f5e494]:
+            - text: Website
+            - textbox [ref=f5e495]
+          - generic [ref=f5e496]:
+            - generic [ref=f5e497]: Adınız
+            - textbox "Adınız" [ref=f5e498]
+          - generic [ref=f5e499]:
+            - generic [ref=f5e500]: E-posta adresiniz
+            - textbox "E-posta adresiniz" [ref=f5e501]
+          - generic [ref=f5e502]:
+            - generic [ref=f5e503]: Şirket (isteğe bağlı)
+            - textbox "Şirket (isteğe bağlı)" [ref=f5e504]
+          - generic [ref=f5e505]:
+            - generic [ref=f5e506]: Proje türü
+            - combobox "Proje türü" [ref=f5e508] [cursor=pointer]:
+              - option "Bir seçenek belirleyin" [disabled] [selected]
+              - option "Kurumsal web sitesi"
+              - option "Landing page"
+              - option "E-ticaret"
+              - option "Web uygulaması"
+              - option "UI/UX tasarım"
+              - option "Yeniden tasarım"
+              - option "SEO ve performans"
+              - option "Bakım ve destek"
+              - option "Henüz emin değilim"
+          - generic [ref=f5e509]:
+            - generic [ref=f5e510]: Projenizden kısaca bahsedin
+            - paragraph [ref=f5e511]: Hedefiniz, varsa mevcut siteniz ve aklınızdaki takvim yeterli.
+            - textbox "Projenizden kısaca bahsedin" [ref=f5e512]
+          - generic [ref=f5e513]:
+            - paragraph [ref=f5e514]: Bu formdaki bilgiler yalnızca talebinize yanıt vermek için kullanılır.
+            - button "Mesajı gönder" [ref=f5e515]
+  - contentinfo [ref=f5e520]:
+    - generic [ref=f5e521]:
+      - generic [ref=f5e522]:
+        - generic [ref=f5e523]:
+          - link "StackWD ana sayfa" [ref=f5e524] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f5e525]: StackWD
+          - paragraph [ref=f5e531]: Katman katman kurulan web siteleri.
+        - navigation [ref=f5e532]:
+          - heading "Site haritası" [level=2] [ref=f5e533]
+          - list [ref=f5e534]:
+            - listitem [ref=f5e535]:
+              - link "Hizmetler" [ref=f5e536] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=f5e537]:
+              - link "İşler" [ref=f5e538] [cursor=pointer]:
+                - /url: /#work
+            - listitem [ref=f5e539]:
+              - link "Süreç" [ref=f5e540] [cursor=pointer]:
+                - /url: /#process
+            - listitem [ref=f5e541]:
+              - link "Hakkında" [ref=f5e542] [cursor=pointer]:
+                - /url: /#about
+            - listitem [ref=f5e543]:
+              - link "SSS" [ref=f5e544] [cursor=pointer]:
+                - /url: /#faq
+            - listitem [ref=f5e545]:
+              - link "İletişim" [ref=f5e546] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=f5e547]:
+          - heading "İletişim" [level=2] [ref=f5e548]
+          - list [ref=f5e549]:
+            - listitem [ref=f5e550]:
+              - link "salihefeggl@gmail.com" [ref=f5e551] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+            - listitem [ref=f5e554]:
+              - link "WhatsApp" [ref=f5e555] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+            - listitem [ref=f5e558]:
+              - link "0552 479 32 33" [ref=f5e559] [cursor=pointer]:
+                - /url: tel:+905524793233
+      - paragraph [aria-hidden]: StackWD
+      - generic [ref=f5e562]:
+        - paragraph [ref=f5e563]: © 2026 StackWD. Tüm hakları saklıdır.
+        - generic [ref=f5e564]:
+          - list "Dil seçimi" [ref=f5e565]:
+            - listitem [ref=f5e566]:
+              - link "Türkçe" [ref=f5e567] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f5e568]:
+              - link "English" [ref=f5e569] [cursor=pointer]:
+                - /url: /en/
+            - listitem [ref=f5e570]:
+              - link "Español" [ref=f5e571] [cursor=pointer]:
+                - /url: /es/
+          - button "Açık temaya geç" [ref=f5e572]
+          - link "Başa dön" [ref=f5e575] [cursor=pointer]:
+            - /url: "#top"

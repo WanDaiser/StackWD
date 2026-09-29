@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "client": {
+      "type": "string"
+    },
+    "concept": {
+      "default": false,
+      "type": "boolean"
+    },
+    "placeholder": {
+      "default": false,
+      "type": "boolean"
+    },
+    "sector": {
+      "type": "string"
+    },
+    "year": {
+      "type": [
+        "number",
+        "string"
+      ]
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "order": {
+      "type": "number"
+    },
+    "cover": {
+      "type": "string"
+    },
+    "coverAlt": {
+      "type": "string"
+    },
+    "tone": {
+      "default": "accent",
+      "type": "string",
+      "enum": [
+        "accent",
+        "grid",
+        "rings"
+      ]
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "summary",
+    "sector",
+    "year",
+    "services",
+    "order"
+  ]
+}

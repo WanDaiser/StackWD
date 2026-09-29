@@ -1,0 +1,345 @@
+---
+/**
+ * İletişim: solda başlık ve doğrudan kanallar, sağda form.
+ * Form JavaScript olmadan da çalışır (normal POST ve yönlendirme). JavaScript varsa sayfa değişmeden gönderilir.
+ * Doğrulama: HTML kısıtları + :user-invalid görünümü + aria-invalid eşlemesi.
+ */
+import Icon from './Icon.astro';
+import { content, serviceKeys } from '../i18n/content';
+import type { Lang } from '../i18n/ui';
+import { sectionIds } from '../i18n/utils';
+import { site } from '../data/site';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const all = content[lang];
+const c = all.contact;
+const f = c.form;
+
+const channels = [
+  { icon: 'envelope', label: c.email, value: site.contact.email, href: `mailto:${site.contact.email}` },
+  { icon: 'whatsapp', label: c.whatsapp, value: site.contact.phoneDisplay, href: site.contact.whatsapp, external: true },
+  { icon: 'phone', label: c.phone, value: site.contact.phoneDisplay, href: `tel:${site.contact.phoneE164}` },
+] as const;
+---
+
+<section id={sectionIds.contact} class="contact relative isolate overflow-clip border-t border-hairline bg-surface py-(--section)" aria-labelledby="contact-title">
+  <div class="contact-glow pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
+
+  <div class="container-page grid gap-x-6 gap-y-14 lg:grid-cols-12">
+    <div class="reveal lg:col-span-5">
+      <p class="eyebrow mb-5">{c.eyebrow}</p>
+      <h2 id="contact-title" class="max-w-[12ch] text-display-lg">{c.title}</h2>
+      <p class="mt-6 max-w-[42ch] text-lead text-body">{c.lead}</p>
+
+      <h3 class="mt-12 font-sans text-small font-medium text-muted">{c.channelsTitle}</h3>
+      <ul class="mt-4 border-t border-hairline" role="list">
+        {
+          channels.map((ch) => (
+            <li class="border-b border-hairline">
+              <a
+                href={ch.href}
+                class="channel group flex items-center gap-4 py-4"
+                {...('external' in ch ? { target: '_blank', rel: 'noopener' } : {})}
+              >
+                <span class="grid size-10 shrink-0 place-items-center rounded-full border border-hairline text-accent transition-colors duration-(--dur-base) group-hover:border-accent">
+                  <Icon name={ch.icon} class="size-5" />
+                </span>
+                <span class="min-w-0 flex-1">
+                  <span class="block text-small text-muted">{ch.label}</span>
+                  <span class="block truncate text-ink">{ch.value}</span>
+                </span>
+                <Icon
+                  name="arrow-up-right"
+                  class="size-4 text-muted transition-[translate,color] duration-(--dur-base) group-hover:text-ink motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5"
+                />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="reveal lg:col-span-6 lg:col-start-7">
+      <div class="rounded-card border border-hairline bg-sunk p-1.5">
+        <div class="rounded-[10px] border border-hairline bg-canvas p-6 md:p-10">
+          <form
+            id="contact-form"
+            class="contact-form grid gap-6 md:grid-cols-2"
+            action="/api/contact"
+            method="post"
+            data-sending={f.sending}
+            data-error-name={f.errorName}
+            data-error-email={f.errorEmail}
+            data-error-type={f.errorType}
+            data-error-message={f.errorMessage}
+          >
+            <input type="hidden" name="lang" value={lang} />
+            <input type="hidden" name="ts" value="" />
+            <div class="hp" aria-hidden="true">
+              <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+            </div>
+
+            <div class="field">
+              <label for="cf-name">{f.name}</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="100" aria-describedby="cf-name-error" />
+              <p id="cf-name-error" class="error"><Icon name="warning-circle" class="size-4 shrink-0" />{f.errorName}</p>
+            </div>
+
+            <div class="field">
+              <label for="cf-email">{f.email}</label>
+              <input
+                id="cf-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                inputmode="email"
+                required
+                maxlength="200"
+                aria-describedby="cf-email-error"
+              />
+              <p id="cf-email-error" class="error"><Icon name="warning-circle" class="size-4 shrink-0" />{f.errorEmail}</p>
+            </div>
+
+            <div class="field">
+              <label for="cf-company">{f.company} <span class="font-normal text-muted">({f.optional})</span></label>
+              <input id="cf-company" name="company" type="text" autocomplete="organization" maxlength="120" />
+            </div>
+
+            <div class="field">
+              <label for="cf-type">{f.type}</label>
+              <div class="select-wrap">
+                <select id="cf-type" name="type" required aria-describedby="cf-type-error">
+                  <option value="" disabled selected>{f.typePlaceholder}</option>
+                  {serviceKeys.map((key) => <option value={key}>{all.services.items[key].title}</option>)}
+                  <option value="unsure">{f.typeUnsure}</option>
+                </select>
+                <Icon name="arrow-down" class="pointer-events-none absolute top-1/2 right-4 size-4 -translate-y-1/2 text-muted" />
+              </div>
+              <p id="cf-type-error" class="error"><Icon name="warning-circle" class="size-4 shrink-0" />{f.errorType}</p>
+            </div>
+
+            <div class="field md:col-span-2">
+              <label for="cf-message">{f.message}</label>
+              <p id="cf-message-help" class="help">{f.messageHelp}</p>
+              <textarea
+                id="cf-message"
+                name="message"
+                rows="5"
+                required
+                minlength="20"
+                maxlength="5000"
+                aria-describedby="cf-message-help cf-message-error"></textarea>
+              <p id="cf-message-error" class="error"><Icon name="warning-circle" class="size-4 shrink-0" />{f.errorMessage}</p>
+            </div>
+
+            <div class="flex flex-col gap-5 md:col-span-2 md:flex-row md:items-center md:justify-between">
+              <p class="max-w-[38ch] text-small text-muted">{f.privacy}</p>
+              <button
+                type="submit"
+                class="submit group inline-flex h-12 shrink-0 items-center gap-3 self-start rounded-full bg-accent pr-1.5 pl-6 text-button whitespace-nowrap text-on-accent transition-[background-color,scale] duration-(--dur-base) ease-out hover:bg-accent-hover disabled:cursor-progress disabled:opacity-70 motion-safe:active:scale-[0.98] md:self-auto"
+              >
+                <span class="submit-label">{f.submit}</span>
+                <span class="grid size-9 place-items-center rounded-full bg-on-accent/15 transition-[translate] duration-(--dur-base) motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-px">
+                  <Icon name="paper-plane-tilt" class="size-[18px]" />
+                </span>
+              </button>
+            </div>
+
+            <p class="form-error md:col-span-2" role="alert" hidden>
+              <Icon name="warning-circle" class="size-5 shrink-0" />
+              <span>{f.error} <a href={`mailto:${site.contact.email}`} class="underline underline-offset-4">{site.contact.email}</a></span>
+            </p>
+          </form>
+
+          <div class="form-success" hidden>
+            <span class="grid size-12 place-items-center rounded-full border border-accent text-accent">
+              <Icon name="check" class="size-6" />
+            </span>
+            <h3 class="mt-6 text-display-md" tabindex="-1">{f.successTitle}</h3>
+            <p class="mt-3 max-w-[44ch] text-body">{f.successText}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-glow {
+    background: radial-gradient(50% 60% at 85% 20%, color-mix(in oklab, var(--accent) calc(var(--glow-strength) * 0.7), transparent), transparent 70%);
+  }
+
+  .hp {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .field {
+    display: grid;
+    gap: 8px;
+    align-content: start;
+  }
+  .field label {
+    font-size: var(--text-small);
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .help {
+    margin-top: -4px;
+    font-size: var(--text-small);
+    color: var(--muted);
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid var(--hairline-strong);
+    border-radius: var(--radius-input);
+    background: var(--surface);
+    color: var(--ink);
+    padding: 12px 16px;
+    font: inherit;
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+  .field textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+  .field input:hover,
+  .field select:hover,
+  .field textarea:hover {
+    border-color: var(--muted);
+  }
+  .field input:focus-visible,
+  .field select:focus-visible,
+  .field textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+    border-color: var(--accent);
+  }
+  .select-wrap {
+    position: relative;
+  }
+  .field select {
+    appearance: none;
+    padding-right: 44px;
+    cursor: pointer;
+  }
+  .field select:has(option[value='']:checked) {
+    color: var(--muted);
+  }
+
+  .error {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-small);
+    color: var(--error);
+  }
+  .field :user-invalid,
+  .show-errors .field :invalid {
+    border-color: var(--error);
+  }
+  .field:has(:user-invalid) .error,
+  .show-errors .field:has(:invalid) .error {
+    display: flex;
+  }
+
+  .form-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    border: 1px solid var(--error);
+    border-radius: var(--radius-input);
+    color: var(--error);
+    font-size: var(--text-small);
+  }
+  .form-error[hidden],
+  .form-success[hidden] {
+    display: none;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const success = form?.parentElement?.querySelector<HTMLElement>('.form-success');
+  const errorBox = form?.querySelector<HTMLElement>('.form-error');
+
+  if (form) {
+    // Özel hata mesajları kullanıldığı için tarayıcı balonları kapatılır. JS yoksa yerel doğrulama çalışır.
+    form.noValidate = true;
+    const ts = form.querySelector<HTMLInputElement>('input[name="ts"]');
+    if (ts) ts.value = String(Date.now());
+
+    const fields = () => Array.from(form.querySelectorAll<HTMLInputElement>('input:not([type=hidden]), select, textarea'));
+    const syncAria = (el: Element) => {
+      if (!(el instanceof HTMLInputElement || el instanceof HTMLSelectElement || el instanceof HTMLTextAreaElement)) return;
+      const invalid = el.matches(':user-invalid') || (form.classList.contains('show-errors') && !el.validity.valid);
+      if (invalid) el.setAttribute('aria-invalid', 'true');
+      else el.removeAttribute('aria-invalid');
+    };
+    form.addEventListener('focusout', (e) => syncAria(e.target as Element));
+    form.addEventListener('input', (e) => {
+      const el = e.target as Element;
+      if (el.hasAttribute('aria-invalid')) syncAria(el);
+    });
+    form.addEventListener('change', (e) => syncAria(e.target as Element));
+
+    // JS olmadan gönderilen formdan dönüşte sonuç gösterilir.
+    const params = new URLSearchParams(location.search);
+    if (params.get('sent') === '1') showSuccess();
+    if (params.get('error') === '1' && errorBox) errorBox.hidden = false;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (errorBox) errorBox.hidden = true;
+
+      if (!form.checkValidity()) {
+        form.classList.add('show-errors');
+        fields().forEach(syncAria);
+        fields().find((el) => !el.validity.valid)?.focus();
+        return;
+      }
+
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      const label = button?.querySelector('.submit-label');
+      const original = label?.textContent ?? '';
+      if (button) button.disabled = true;
+      if (label) label.textContent = form.dataset.sending ?? original;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        const data = await res.json().catch(() => ({ ok: false }));
+        if (!res.ok || !data.ok) throw new Error('send failed');
+        showSuccess();
+      } catch {
+        if (errorBox) {
+          errorBox.hidden = false;
+          errorBox.focus?.();
+        }
+      } finally {
+        if (button) button.disabled = false;
+        if (label) label.textContent = original;
+      }
+    });
+  }
+
+  function showSuccess() {
+    if (!form || !success) return;
+    form.hidden = true;
+    success.hidden = false;
+    success.querySelector<HTMLElement>('h3')?.focus();
+  }
+</script>

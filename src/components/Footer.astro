@@ -1,0 +1,105 @@
+---
+/** Footer: marka cümlesi, site haritası, kanallar ve altta büyük kelime markası. */
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import LangSwitch from './LangSwitch.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import { content } from '../i18n/content';
+import type { Lang } from '../i18n/ui';
+import { homePath, sectionHref, sectionIds, useTranslations, type Alternates } from '../i18n/utils';
+import { site } from '../data/site';
+
+interface Props {
+  lang: Lang;
+  alternates?: Alternates;
+}
+const { lang, alternates } = Astro.props;
+const t = useTranslations(lang);
+const c = content[lang];
+const year = new Date().getFullYear();
+
+const links = [
+  { id: sectionIds.services, label: t('nav.services') },
+  { id: sectionIds.work, label: t('nav.work') },
+  { id: sectionIds.process, label: t('nav.process') },
+  { id: sectionIds.about, label: t('nav.about') },
+  { id: sectionIds.faq, label: t('nav.faq') },
+  { id: sectionIds.contact, label: c.footer.contact },
+];
+---
+
+<footer class="relative overflow-clip border-t border-hairline pt-20 pb-8">
+  <div class="container-page">
+    <div class="grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-12">
+      <div class="md:col-span-2 lg:col-span-5">
+        <a href={homePath(lang)} aria-label={t('a11y.home')} class="-m-2 inline-block rounded-full p-2">
+          <Logo />
+        </a>
+        <p class="mt-6 max-w-[28ch] font-display text-display-md text-ink">{c.footer.tagline}</p>
+      </div>
+
+      <nav aria-labelledby="footer-nav" class="lg:col-span-3 lg:col-start-7">
+        <h2 id="footer-nav" class="font-sans text-small font-medium text-muted">{c.footer.nav}</h2>
+        <ul class="mt-4 grid gap-1" role="list">
+          {
+            links.map((l) => (
+              <li>
+                <a href={sectionHref(lang, l.id)} class="inline-flex min-h-11 items-center text-body transition-colors duration-(--dur-fast) hover:text-ink">
+                  {l.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="lg:col-span-3">
+        <h2 class="font-sans text-small font-medium text-muted">{c.footer.contact}</h2>
+        <ul class="mt-4 grid gap-1" role="list">
+          <li>
+            <a href={`mailto:${site.contact.email}`} class="inline-flex min-h-11 items-center gap-3 text-body hover:text-ink">
+              <Icon name="envelope" class="size-5 text-muted" />{site.contact.email}
+            </a>
+          </li>
+          <li>
+            <a href={site.contact.whatsapp} target="_blank" rel="noopener" class="inline-flex min-h-11 items-center gap-3 text-body hover:text-ink">
+              <Icon name="whatsapp" class="size-5 text-muted" />WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href={`tel:${site.contact.phoneE164}`} class="inline-flex min-h-11 items-center gap-3 text-body hover:text-ink">
+              <Icon name="phone" class="size-5 text-muted" />{site.contact.phoneDisplay}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="wordmark pointer-events-none mt-20 font-display leading-[0.8] tracking-[-0.05em] select-none" aria-hidden="true">
+      StackWD
+    </p>
+
+    <div class="mt-8 flex flex-col gap-6 border-t border-hairline pt-6 md:flex-row md:items-center md:justify-between">
+      <p class="text-small text-muted">© {year} {site.name}. {c.footer.rights}</p>
+      <div class="flex flex-wrap items-center gap-3">
+        <LangSwitch lang={lang} variant="inline" alternates={alternates} />
+        <ThemeToggle lang={lang} />
+        <a href="#top" class="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-small text-body hover:text-ink">
+          {c.footer.backToTop}
+          <Icon name="arrow-up" class="size-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .wordmark {
+    font-size: clamp(4.5rem, 21vw, 19rem);
+    font-weight: 500;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--hairline-strong);
+    white-space: nowrap;
+    margin-inline-start: -0.04em;
+  }
+</style>

@@ -1,0 +1,69 @@
+---
+/** Tek sayfalık sitenin bölüm sırası. Her dil aynı bileşenleri kullanır. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from './Header.astro';
+import Hero from './Hero.astro';
+import Services from './Services.astro';
+import Work from './Work.astro';
+import Process from './Process.astro';
+import About from './About.astro';
+import Faq from './Faq.astro';
+import Contact from './Contact.astro';
+import Footer from './Footer.astro';
+import { languages, type Lang } from '../i18n/ui';
+import { homePath, useTranslations } from '../i18n/utils';
+import { content } from '../i18n/content';
+import { site } from '../data/site';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const url = new URL(homePath(lang), site.url).href;
+
+// Yalnızca doğrulanabilir bilgiler: ad, adres, iletişim, diller, hizmet başlıkları.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${site.url}/#studio`,
+      name: site.name,
+      url,
+      description: t('meta.description'),
+      email: site.contact.email,
+      telephone: site.contact.phoneE164,
+      logo: new URL('/icon-512.png', site.url).href,
+      image: new URL('/og.png', site.url).href,
+      knowsLanguage: ['tr', 'en', 'es'],
+      makesOffer: Object.values(content[lang].services.items).map((s) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: s.title },
+      })),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${site.url}/#website`,
+      url,
+      name: site.name,
+      inLanguage: languages[lang].htmlLang,
+      publisher: { '@id': `${site.url}/#studio` },
+    },
+  ],
+};
+---
+
+<BaseLayout lang={lang} structuredData={structuredData}>
+  <Header lang={lang} />
+  <main id="main" tabindex="-1" class="outline-none">
+    <Hero lang={lang} />
+    <Services lang={lang} />
+    <Work lang={lang} />
+    <Process lang={lang} />
+    <About lang={lang} />
+    <Faq lang={lang} />
+    <Contact lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>

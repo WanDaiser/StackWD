@@ -1,0 +1,129 @@
+- generic [active] [ref=f29e1]:
+  - banner [ref=f29e2]:
+    - link "İçeriğe geç" [ref=f29e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f29e4]:
+      - link "StackWD ana sayfa" [ref=f29e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f29e6]: StackWD
+      - navigation "Ana menü" [ref=f29e12]:
+        - list [ref=f29e13]:
+          - listitem [ref=f29e14]:
+            - link "Hizmetler" [ref=f29e15] [cursor=pointer]:
+              - /url: /#services
+          - listitem [ref=f29e16]:
+            - link "İşler" [ref=f29e17] [cursor=pointer]:
+              - /url: /#work
+          - listitem [ref=f29e18]:
+            - link "Süreç" [ref=f29e19] [cursor=pointer]:
+              - /url: /#process
+          - listitem [ref=f29e20]:
+            - link "Hakkında" [ref=f29e21] [cursor=pointer]:
+              - /url: /#about
+      - generic [ref=f29e22]:
+        - group [ref=f29e23]:
+          - generic "Dil seçimi, TR" [ref=f29e24] [cursor=pointer]:
+            - generic [ref=f29e27]: Dil seçimi,
+            - generic [ref=f29e28]: TR
+        - button "Açık temaya geç" [ref=f29e29]
+        - link "Projenizi konuşalım" [ref=f29e33] [cursor=pointer]:
+          - /url: /#contact
+  - main [ref=f29e38]:
+    - article [ref=f29e39]:
+      - generic [ref=f29e40]:
+        - link "Tüm işler" [ref=f29e41] [cursor=pointer]:
+          - /url: /#work
+        - generic [ref=f29e44]: Konsept çalışma
+        - heading "Kıyı Mimarlık" [level=1] [ref=f29e46]
+        - paragraph [ref=f29e47]: Ege kıyısında çalışan bir mimarlık ofisi için projeleri ön plana çıkaran sakin ve editoryal bir kurumsal site konsepti.
+        - generic [ref=f29e48]:
+          - generic [ref=f29e49]:
+            - term [ref=f29e50]: Müşteri
+            - definition [ref=f29e51]: Konsept çalışma
+          - generic [ref=f29e52]:
+            - term [ref=f29e53]: Sektör
+            - definition [ref=f29e54]: Mimarlık
+          - generic [ref=f29e55]:
+            - term [ref=f29e56]: Yıl
+            - definition [ref=f29e57]: "2026"
+          - generic [ref=f29e58]:
+            - term [ref=f29e59]: Hizmetler
+            - definition [ref=f29e60]: Kurumsal web sitesi, UI/UX tasarım
+      - img "Kıyı Mimarlık konsept sitesinin masaüstü ve mobil ana sayfası" [ref=f29e64]
+      - generic [ref=f29e66]:
+        - blockquote [ref=f29e67]:
+          - paragraph [ref=f29e68]: Bu bir konsept çalışmadır. Marka, içerikler ve arayüzdeki kişiler kurgusaldır. Gerçek bir müşteri için hazırlanmamıştır.
+        - heading "Problem" [level=2] [ref=f29e69]
+        - paragraph [ref=f29e70]: Mimarlık ofislerinin siteleri çoğu zaman ya ağır görsellerle yavaşlar ya da her projeyi aynı ızgaraya sıkıştırır. Yere özgü tasarlayan bir ofis için sitenin projeleri bir katalog gibi değil, her birinin hikâyesiyle anlatması gerekiyordu. Ziyaretçi, ofisin yaklaşımını ilk ekranda anlayabilmeliydi.
+        - heading "Yaklaşım" [level=2] [ref=f29e71]
+        - paragraph [ref=f29e72]: "Sayfanın dilini ofisin malzeme anlayışından türettik: kireç rengi bir zemin, zeytin yeşili tek bir vurgu ve büyük, sıkı aralıklı başlıklar. Proje listesi, görsellerle dolu bir ızgara yerine konum, tür ve durum bilgisini aynı satırda gösteren sade bir dizin olarak kurgulandı. Böylece sayfa hızlı açılıyor ve her proje kendi sayfasında büyük görsellerle anlatılabiliyor."
+        - paragraph [ref=f29e73]:
+          - img "Proje dizini ve yaklaşım bölümünün masaüstü görünümü" [ref=f29e74]
+        - paragraph [ref=f29e75]: Ana görselde fotoğraf yerine yapının cephesini çizgi diliyle anlatan bir illüstrasyon kullanıldı. Bu seçim, gerçek proje fotoğrafları eklenene kadar sitenin eksik görünmesini de engelliyor.
+        - heading "Sonuç" [level=2] [ref=f29e76]
+        - paragraph [ref=f29e77]: Konsept; ana sayfa, proje dizini ve yaklaşım bölümünden oluşan, masaüstünde ve mobilde aynı sakinliği koruyan bir tasarım dili ortaya koyuyor. Mobilde proje dizini tek sütuna iner, başlık ve görsel sırası korunur.
+        - paragraph [ref=f29e78]:
+          - img "Ana sayfanın mobilde üç farklı bölümü" [ref=f29e79]
+      - navigation "Sonraki vaka" [ref=f29e80]:
+        - link "Sonraki vaka Tane Kahve" [ref=f29e81] [cursor=pointer]:
+          - /url: /isler/tane-kahve/
+          - text: Sonraki vaka
+          - generic [ref=f29e82]: Tane Kahve
+  - contentinfo [ref=f29e87]:
+    - generic [ref=f29e88]:
+      - generic [ref=f29e89]:
+        - generic [ref=f29e90]:
+          - link "StackWD ana sayfa" [ref=f29e91] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f29e92]: StackWD
+          - paragraph [ref=f29e98]: Katman katman kurulan web siteleri.
+        - navigation [ref=f29e99]:
+          - heading "Site haritası" [level=2] [ref=f29e100]
+          - list [ref=f29e101]:
+            - listitem [ref=f29e102]:
+              - link "Hizmetler" [ref=f29e103] [cursor=pointer]:
+                - /url: /#services
+            - listitem [ref=f29e104]:
+              - link "İşler" [ref=f29e105] [cursor=pointer]:
+                - /url: /#work
+            - listitem [ref=f29e106]:
+              - link "Süreç" [ref=f29e107] [cursor=pointer]:
+                - /url: /#process
+            - listitem [ref=f29e108]:
+              - link "Hakkında" [ref=f29e109] [cursor=pointer]:
+                - /url: /#about
+            - listitem [ref=f29e110]:
+              - link "SSS" [ref=f29e111] [cursor=pointer]:
+                - /url: /#faq
+            - listitem [ref=f29e112]:
+              - link "İletişim" [ref=f29e113] [cursor=pointer]:
+                - /url: /#contact
+        - generic [ref=f29e114]:
+          - heading "İletişim" [level=2] [ref=f29e115]
+          - list [ref=f29e116]:
+            - listitem [ref=f29e117]:
+              - link "salihefeggl@gmail.com" [ref=f29e118] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+            - listitem [ref=f29e121]:
+              - link "WhatsApp" [ref=f29e122] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+            - listitem [ref=f29e125]:
+              - link "0552 479 32 33" [ref=f29e126] [cursor=pointer]:
+                - /url: tel:+905524793233
+      - paragraph [aria-hidden]: StackWD
+      - generic [ref=f29e129]:
+        - paragraph [ref=f29e130]: © 2026 StackWD. Tüm hakları saklıdır.
+        - generic [ref=f29e131]:
+          - list "Dil seçimi" [ref=f29e132]:
+            - listitem [ref=f29e133]:
+              - link "Türkçe" [ref=f29e134] [cursor=pointer]:
+                - /url: /isler/kiyi-mimarlik/
+            - listitem [ref=f29e135]:
+              - link "English" [ref=f29e136] [cursor=pointer]:
+                - /url: /en/work/kiyi-mimarlik/
+            - listitem [ref=f29e137]:
+              - link "Español" [ref=f29e138] [cursor=pointer]:
+                - /url: /es/proyectos/kiyi-mimarlik/
+          - button "Açık temaya geç" [ref=f29e139]
+          - link "Başa dön" [ref=f29e142] [cursor=pointer]:
+            - /url: "#top"

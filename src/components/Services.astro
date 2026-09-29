@@ -1,0 +1,49 @@
+---
+/** Hizmetler: iki sütunlu, ince çizgiyle ayrılmış liste. Kart kullanılmaz. */
+import Icon from './Icon.astro';
+import SectionHeader from './SectionHeader.astro';
+import { content, serviceIcons, serviceKeys } from '../i18n/content';
+import type { Lang } from '../i18n/ui';
+import { sectionIds } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const c = content[lang].services;
+---
+
+<section id={sectionIds.services} class="py-(--section)" aria-labelledby="services-title">
+  <div class="container-page">
+    <SectionHeader id="services-title" title={c.title} lead={c.lead} />
+
+    <ul class="mt-14 grid border-t border-hairline md:grid-cols-2 md:gap-x-12 lg:mt-20 lg:gap-x-20" role="list">
+      {
+        serviceKeys.map((key) => {
+          const item = c.items[key];
+          return (
+            <li class="service reveal grid grid-cols-[auto_1fr] gap-x-5 border-b border-hairline py-8 lg:py-10">
+              <span class="service-icon grid size-11 place-items-center rounded-full border border-hairline text-accent transition-colors duration-(--dur-base)">
+                <Icon name={serviceIcons[key]} class="size-[22px]" />
+              </span>
+              <div>
+                <h3 class="text-title text-ink">{item.title}</h3>
+                <p class="mt-2 max-w-[48ch] text-body">{item.text}</p>
+                <p class="mt-4 text-small text-muted">
+                  <span class="sr-only">{c.includesLabel}: </span>
+                  {item.includes.join(', ')}
+                </p>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .service:hover .service-icon {
+    border-color: var(--accent);
+  }
+</style>

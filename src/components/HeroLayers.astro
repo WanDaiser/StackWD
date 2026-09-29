@@ -1,0 +1,202 @@
+---
+/**
+ * Hero kompozisyonu: izometrik perspektifte dört katman.
+ * Yukarıdan aşağı: strateji, arayüz, kod, yayın. Her düzlem soyut bir geometri taşır, sahte arayüz çizilmez.
+ * Açılışta katmanlar alttan yukarı sırayla yerine oturur. Sayfa kaydıkça hafifçe ayrışır.
+ */
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  class?: string;
+}
+const { lang, class: className = '' } = Astro.props;
+const t = useTranslations(lang);
+
+// İzometrik üst yüz: yerel kare koordinatlarını eşkenar dörtgene çevirir.
+const ISO = 'matrix(0.866 0.5 -0.866 0.5 0 0)';
+const CX = 262;
+const GAP = 122;
+const TOP = 128;
+const layers = [
+  { key: 'strategy', label: t('layer.strategy') },
+  { key: 'interface', label: t('layer.interface') },
+  { key: 'code', label: t('layer.code') },
+  { key: 'launch', label: t('layer.launch') },
+] as const;
+
+// Kod katmanındaki modül ızgarası: dolu hücreler bilinçli olarak düzensiz.
+const filled = new Set([0, 5, 6, 9, 15]);
+const cells = Array.from({ length: 16 }, (_, n) => ({
+  x: -83 + (n % 4) * 46,
+  y: -83 + Math.floor(n / 4) * 46,
+  on: filled.has(n),
+}));
+---
+
+<svg
+  class:list={['hero-layers h-auto w-full', className]}
+  viewBox="0 0 620 640"
+  role="img"
+  aria-label={t('hero.visual')}
+>
+  <!-- Katmanları birbirine bağlayan dikey kılavuzlar -->
+  <g class="guides" stroke="var(--hairline-strong)" stroke-width="1" stroke-dasharray="2 6" opacity="0.6">
+    <line x1={CX - 190} y1={TOP} x2={CX - 190} y2={TOP + GAP * 3}></line>
+    <line x1={CX + 190} y1={TOP} x2={CX + 190} y2={TOP + GAP * 3}></line>
+    <line x1={CX} y1={TOP + 110} x2={CX} y2={TOP + GAP * 3 + 110}></line>
+  </g>
+
+  {
+    [...layers].reverse().map((layer) => {
+      const i = layers.findIndex((l) => l.key === layer.key);
+      const cy = TOP + i * GAP;
+      const isAccent = layer.key === 'interface';
+      return (
+        <g class="layer" style={`--i:${i}`}>
+          <g transform={`translate(${CX} ${cy}) ${ISO}`}>
+            <rect
+              x="-110"
+              y="-110"
+              width="220"
+              height="220"
+              rx="6"
+              fill={isAccent ? 'color-mix(in oklab, var(--accent) 12%, var(--surface))' : 'var(--surface)'}
+              fill-opacity={isAccent ? '0.94' : '0.82'}
+              stroke={isAccent ? 'var(--accent)' : 'var(--hairline-strong)'}
+              stroke-width="1.2"
+              vector-effect="non-scaling-stroke"
+            />
+
+            {layer.key === 'strategy' && (
+              <g stroke="var(--ink)" stroke-width="1.2" fill="none" vector-effect="non-scaling-stroke">
+                <circle r="62" stroke-dasharray="3 5" opacity="0.5" />
+                <polyline points="-64,40 -4,-34 60,46" opacity="0.85" />
+                <circle cx="-64" cy="40" r="6" fill="var(--ink)" />
+                <circle cx="-4" cy="-34" r="6" fill="var(--canvas)" />
+                <circle cx="60" cy="46" r="6" fill="var(--ink)" />
+              </g>
+            )}
+
+            {layer.key === 'interface' && (
+              <g stroke="var(--accent)" stroke-width="1.2" fill="none" vector-effect="non-scaling-stroke">
+                <rect x="-84" y="-84" width="56" height="168" rx="5" />
+                <rect x="-14" y="-84" width="98" height="70" rx="5" />
+                <rect x="-14" y="0" width="98" height="84" rx="5" />
+                <text
+                  x="35"
+                  y="62"
+                  text-anchor="middle"
+                  fill="var(--accent)"
+                  stroke="none"
+                  font-family="var(--font-display)"
+                  font-size="54"
+                  font-weight="500"
+                  letter-spacing="-2"
+                >
+                  Aa
+                </text>
+              </g>
+            )}
+
+            {layer.key === 'code' && (
+              <g>
+                {cells.map((c) => (
+                  <rect
+                    x={c.x}
+                    y={c.y}
+                    width="34"
+                    height="34"
+                    rx="4"
+                    fill={c.on ? 'var(--ink)' : 'none'}
+                    fill-opacity={c.on ? '0.82' : '0'}
+                    stroke="var(--ink)"
+                    stroke-opacity={c.on ? '0' : '0.35'}
+                    stroke-width="1.2"
+                    vector-effect="non-scaling-stroke"
+                  />
+                ))}
+              </g>
+            )}
+
+            {layer.key === 'launch' && (
+              <g fill="none" stroke="var(--ink)" stroke-width="1.2" vector-effect="non-scaling-stroke">
+                <circle r="92" opacity="0.18" />
+                <circle r="68" opacity="0.32" />
+                <circle r="44" opacity="0.55" />
+                <circle r="18" fill="var(--ink)" stroke="none" />
+              </g>
+            )}
+          </g>
+
+          <g class="label" aria-hidden="true">
+            <line
+              x1={CX + 196}
+              y1={cy}
+              x2={CX + 222}
+              y2={cy}
+              stroke={isAccent ? 'var(--accent)' : 'var(--hairline-strong)'}
+              stroke-width="1"
+            />
+            <circle cx={CX + 190} cy={cy} r="3" fill={isAccent ? 'var(--accent)' : 'var(--ink)'} />
+            <text
+              x={CX + 230}
+              y={cy + 5}
+              fill={isAccent ? 'var(--accent)' : 'var(--muted)'}
+              font-family="var(--font-mono)"
+              font-size="15"
+              font-weight="500"
+            >
+              {layer.label}
+            </text>
+          </g>
+        </g>
+      );
+    })
+  }
+</svg>
+
+<style>
+  .hero-layers {
+    overflow: visible;
+    view-timeline: --hero-layers block;
+  }
+
+  @keyframes layer-in {
+    from {
+      opacity: 0;
+      translate: 0 calc((3 - var(--i)) * 122px);
+    }
+  }
+  @keyframes layer-drift {
+    to {
+      transform: translateY(calc((3 - var(--i)) * -10px));
+    }
+  }
+  @keyframes guides-in {
+    from { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .layer {
+      animation: layer-in var(--dur-scene) var(--ease-out) both;
+      animation-delay: calc((3 - var(--i)) * var(--stagger) + 100ms);
+    }
+    .guides {
+      animation: guides-in var(--dur-slow) var(--ease-out) both;
+      animation-delay: 400ms;
+    }
+
+    @supports ((animation-timeline: view()) and (animation-range: entry)) {
+      .layer {
+        animation:
+          layer-in var(--dur-scene) var(--ease-out) both,
+          layer-drift linear both;
+        animation-delay: calc((3 - var(--i)) * var(--stagger) + 100ms), 0s;
+        animation-timeline: auto, --hero-layers;
+        animation-range: normal, exit 0% exit 100%;
+      }
+    }
+  }
+</style>

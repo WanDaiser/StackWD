@@ -1,0 +1,339 @@
+- generic [active] [ref=f46e1]:
+  - banner [ref=f46e2]:
+    - link "Saltar al contenido" [ref=f46e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f46e4]:
+      - link "Inicio de StackWD" [ref=f46e5] [cursor=pointer]:
+        - /url: /es/
+        - generic [ref=f46e6]: StackWD
+      - generic [ref=f46e12]:
+        - button "Cambiar a tema claro" [ref=f46e13]
+        - button "Abrir menú" [ref=f46e16]
+  - main [ref=f46e19]:
+    - region [ref=f46e20]:
+      - generic [ref=f46e21]:
+        - paragraph [ref=f46e22]: Diseño y desarrollo web
+        - heading "Sitios web construidos capa a capa." [level=1] [ref=f46e23]
+        - generic [ref=f46e24]:
+          - generic [ref=f46e25]:
+            - paragraph [ref=f46e26]: Estrategia, diseño, código y lanzamiento en las mismas manos. Sitios web rápidos, accesibles y duraderos para su empresa.
+            - link "Cuéntenos su proyecto" [ref=f46e28] [cursor=pointer]:
+              - /url: /es/#contact
+          - img "Un dibujo abstracto de las capas de estrategia, interfaz, código y lanzamiento, apiladas una sobre otra." [ref=f46e34]:
+            - generic [ref=f46e36]: Lanzamiento
+            - generic [ref=f46e47]: Código
+            - generic [ref=f46e70]:
+              - generic [ref=f46e71]: Aa
+              - generic [ref=f46e80]: Interfaz
+            - generic [ref=f46e81]: Estrategia
+    - region [ref=f46e93]:
+      - generic [ref=f46e94]:
+        - generic [ref=f46e95]:
+          - heading "Cada capa que necesita un sitio web." [level=2] [ref=f46e96]
+          - paragraph [ref=f46e97]: Desde una página de campaña hasta una aplicación web completa, asumimos todo el trabajo con el mismo cuidado, de la idea al lanzamiento y después.
+        - list [ref=f46e98]:
+          - listitem [ref=f46e99]:
+            - generic [ref=f46e103]:
+              - heading "Sitio corporativo" [level=3] [ref=f46e104]
+              - paragraph [ref=f46e105]: Sitios de varias páginas que cuentan bien su marca, se actualizan con facilidad y se encuentran en los buscadores.
+              - paragraph [ref=f46e106]:
+                - generic [ref=f46e107]: "Alcance:"
+                - text: Arquitectura de contenidos, Estructura multilingüe, Panel de gestión
+          - listitem [ref=f46e108]:
+            - generic [ref=f46e112]:
+              - heading "Landing page" [level=3] [ref=f46e113]
+              - paragraph [ref=f46e114]: Páginas de conversión rápidas, centradas en un solo objetivo, para campañas y lanzamientos.
+              - paragraph [ref=f46e115]:
+                - generic [ref=f46e116]: "Alcance:"
+                - text: Estructura del mensaje, Formularios y medición, Base lista para pruebas
+          - listitem [ref=f46e117]:
+            - generic [ref=f46e121]:
+              - heading "Comercio electrónico" [level=3] [ref=f46e122]
+              - paragraph [ref=f46e123]: Tiendas online que presentan sus productos con una experiencia de compra clara y confiable.
+              - paragraph [ref=f46e124]:
+                - generic [ref=f46e125]: "Alcance:"
+                - text: Estructura del catálogo, Integración de pagos, Flujo de pedidos
+          - listitem [ref=f46e126]:
+            - generic [ref=f46e130]:
+              - heading "Aplicación web" [level=3] [ref=f46e131]
+              - paragraph [ref=f46e132]: Aplicaciones a medida que llevan al navegador procesos como citas, reservas o portales de clientes.
+              - paragraph [ref=f46e133]:
+                - generic [ref=f46e134]: "Alcance:"
+                - text: Cuentas de usuario, Base de datos y API, Pantallas de gestión
+          - listitem [ref=f46e135]:
+            - generic [ref=f46e139]:
+              - heading "Diseño UI/UX" [level=3] [ref=f46e140]
+              - paragraph [ref=f46e141]: Diseño de interfaz basado en flujos de usuario, un sistema de diseño y archivos listos para desarrollo.
+              - paragraph [ref=f46e142]:
+                - generic [ref=f46e143]: "Alcance:"
+                - text: Flujos de usuario, Prototipo, Sistema de diseño
+          - listitem [ref=f46e144]:
+            - generic [ref=f46e148]:
+              - heading "Rediseño" [level=3] [ref=f46e149]
+              - paragraph [ref=f46e150]: Llevar su sitio actual a una base moderna, rápida y coherente, conservando su contenido y su posicionamiento.
+              - paragraph [ref=f46e151]:
+                - generic [ref=f46e152]: "Alcance:"
+                - text: Análisis del estado actual, Plan de migración SEO, Migración de contenidos
+          - listitem [ref=f46e153]:
+            - generic [ref=f46e157]:
+              - heading "SEO y rendimiento" [level=3] [ref=f46e158]
+              - paragraph [ref=f46e159]: Mejoras técnicas de SEO, velocidad y accesibilidad para sitios lentos o poco visibles en los buscadores.
+              - paragraph [ref=f46e160]:
+                - generic [ref=f46e161]: "Alcance:"
+                - text: Core Web Vitals, SEO técnico, Auditoría de accesibilidad
+          - listitem [ref=f46e162]:
+            - generic [ref=f46e166]:
+              - heading "Mantenimiento y soporte" [level=3] [ref=f46e167]
+              - paragraph [ref=f46e168]: Continuidad tras el lanzamiento con actualizaciones, copias de seguridad, seguridad y pequeñas mejoras.
+              - paragraph [ref=f46e169]:
+                - generic [ref=f46e170]: "Alcance:"
+                - text: Actualizaciones y copias, Supervisión de seguridad, Apoyo con contenidos
+    - region [ref=f46e171]:
+      - generic [ref=f46e172]:
+        - generic [ref=f46e173]:
+          - paragraph [ref=f46e174]: Proyectos seleccionados
+          - heading "Cada proyecto empieza con su propia pregunta." [level=2] [ref=f46e175]
+          - paragraph [ref=f46e176]: Cada caso explica paso a paso el problema, el enfoque y el resultado.
+        - generic [ref=f46e177]:
+          - article [ref=f46e178]:
+            - generic [ref=f46e179]: Imagen del proyecto próximamente
+            - generic [ref=f46e191]:
+              - generic [ref=f46e192]: Marcador de posición
+              - paragraph [ref=f46e193]: Sector por añadir, 2026
+            - heading [level=3] [ref=f46e194]:
+              - link "Caso de sitio corporativo" [ref=f46e195] [cursor=pointer]:
+                - /url: /es/proyectos/ornek-vaka-1/
+            - paragraph [ref=f46e196]: Este espacio se completará con un proyecto real o con un trabajo conceptual claramente etiquetado. Aquí va el resumen del proyecto en una frase.
+            - generic [aria-hidden] [ref=f46e197]: Ver el caso
+          - article [ref=f46e200]:
+            - generic [ref=f46e201]: Imagen del proyecto próximamente
+            - generic [ref=f46e234]:
+              - generic [ref=f46e235]: Marcador de posición
+              - paragraph [ref=f46e236]: Sector por añadir, 2026
+            - heading [level=3] [ref=f46e237]:
+              - link "Caso de comercio electrónico" [ref=f46e238] [cursor=pointer]:
+                - /url: /es/proyectos/ornek-vaka-2/
+            - paragraph [ref=f46e239]: Este espacio se completará con un proyecto real o con un trabajo conceptual claramente etiquetado. Aquí va el resumen del proyecto en una frase.
+            - generic [aria-hidden] [ref=f46e240]: Ver el caso
+          - article [ref=f46e243]:
+            - generic [ref=f46e244]: Imagen del proyecto próximamente
+            - generic [ref=f46e256]:
+              - generic [ref=f46e257]: Marcador de posición
+              - paragraph [ref=f46e258]: Sector por añadir, 2026
+            - heading [level=3] [ref=f46e259]:
+              - link "Caso de aplicación web" [ref=f46e260] [cursor=pointer]:
+                - /url: /es/proyectos/ornek-vaka-3/
+            - paragraph [ref=f46e261]: Este espacio se completará con un proyecto real o con un trabajo conceptual claramente etiquetado. Aquí va el resumen del proyecto en una frase.
+            - generic [aria-hidden] [ref=f46e262]: Ver el caso
+    - region [ref=f46e265]:
+      - generic [ref=f46e266]:
+        - generic [ref=f46e268]:
+          - heading "Cuatro capas, un proceso claro." [level=2] [ref=f46e269]
+          - paragraph [ref=f46e270]: Desde el principio está claro qué se hace en cada etapa y qué recibe al final. Durante todo el proceso trabaja directamente con la misma persona.
+        - list [ref=f46e272]:
+          - listitem [ref=f46e273]:
+            - generic [ref=f46e284]:
+              - paragraph [ref=f46e285]: Estrategia
+              - heading "Descubrimiento" [level=3] [ref=f46e286]
+              - paragraph [ref=f46e287]: Empezamos escuchando sobre su negocio, su público y su competencia, y definimos juntos lo que el sitio debe lograr.
+              - generic [ref=f46e288]:
+                - generic [ref=f46e289]:
+                  - term [ref=f46e290]: De su parte
+                  - definition [ref=f46e291]: Sus objetivos y, si existen, contenidos y archivos de marca.
+                - generic [ref=f46e292]:
+                  - term [ref=f46e293]: Entrega
+                  - definition [ref=f46e294]: Alcance, mapa del sitio y calendario.
+          - listitem [ref=f46e295]:
+            - generic [ref=f46e306]:
+              - paragraph [ref=f46e307]: Interfaz
+              - heading "Diseño" [level=3] [ref=f46e308]
+              - paragraph [ref=f46e309]: La estructura de contenidos y la interfaz se definen primero en bocetos y luego en diseño detallado. Escritorio y móvil se diseñan a la vez.
+              - generic [ref=f46e310]:
+                - generic [ref=f46e311]:
+                  - term [ref=f46e312]: De su parte
+                  - definition [ref=f46e313]: Comentarios sobre los bocetos.
+                - generic [ref=f46e314]:
+                  - term [ref=f46e315]: Entrega
+                  - definition [ref=f46e316]: Diseño de interfaz aprobado y prototipo navegable.
+          - listitem [ref=f46e317]:
+            - generic [ref=f46e328]:
+              - paragraph [ref=f46e329]: Código
+              - heading "Desarrollo" [level=3] [ref=f46e330]
+              - paragraph [ref=f46e331]: El diseño se convierte en código rápido, accesible y fácil de actualizar. Puede seguir el avance en un enlace de vista previa.
+              - generic [ref=f46e332]:
+                - generic [ref=f46e333]:
+                  - term [ref=f46e334]: De su parte
+                  - definition [ref=f46e335]: Contenidos finales y notas sobre la vista previa.
+                - generic [ref=f46e336]:
+                  - term [ref=f46e337]: Entrega
+                  - definition [ref=f46e338]: Un sitio probado y listo para publicar.
+          - listitem [ref=f46e339]:
+            - generic [ref=f46e350]:
+              - paragraph [ref=f46e351]: Lanzamiento
+              - heading "Lanzamiento" [level=3] [ref=f46e352]
+              - paragraph [ref=f46e353]: Configuramos dominio, alojamiento, analítica y buscadores, y publicamos el sitio. El soporte continúa después del lanzamiento.
+              - generic [ref=f46e354]:
+                - generic [ref=f46e355]:
+                  - term [ref=f46e356]: De su parte
+                  - definition [ref=f46e357]: Acceso al dominio y aprobación final.
+                - generic [ref=f46e358]:
+                  - term [ref=f46e359]: Entrega
+                  - definition [ref=f46e360]: Sitio publicado, guía breve y opciones de mantenimiento.
+    - region [ref=f46e361]:
+      - generic [ref=f46e362]:
+        - generic [ref=f46e363]:
+          - heading "Un estudio pequeño, comunicación directa." [level=2] [ref=f46e364]
+          - paragraph [ref=f46e365]: StackWD es un estudio de una sola persona. La misma persona diseña, desarrolla y publica su proyecto de principio a fin.
+          - paragraph [ref=f46e366]: Sin intermediarios, las decisiones son rápidas, nada se pierde entre traspasos y siempre sabe a quién dirigirse. El estudio existe para crear trabajos sólidos y sencillos que representen su marca en internet durante años.
+        - generic [ref=f46e367]:
+          - heading "Principios de trabajo" [level=3] [ref=f46e368]
+          - generic [ref=f46e369]:
+            - generic [ref=f46e370]:
+              - term [ref=f46e371]: Comunicación directa
+              - definition [ref=f46e372]: En cada etapa habla con la misma persona, sin intermediarios.
+            - generic [ref=f46e373]:
+              - term [ref=f46e374]: Calidad medible
+              - definition [ref=f46e375]: Velocidad, accesibilidad y SEO se basan en mediciones, no en gustos, y se prueban antes del lanzamiento.
+            - generic [ref=f46e376]:
+              - term [ref=f46e377]: Transparencia
+              - definition [ref=f46e378]: Alcance, calendario y coste quedan por escrito desde el principio.
+            - generic [ref=f46e379]:
+              - term [ref=f46e380]: La propiedad es suya
+              - definition [ref=f46e381]: El dominio, el contenido y el código fuente son suyos. Puede continuar con quien quiera, cuando quiera.
+    - region [ref=f46e382]:
+      - generic [ref=f46e383]:
+        - generic [ref=f46e384]:
+          - heading "Preguntas frecuentes" [level=2] [ref=f46e385]
+          - paragraph [ref=f46e386]: Si no encuentra aquí su respuesta, escríbanos directamente.
+        - generic [ref=f46e387]:
+          - group [ref=f46e388]:
+            - generic "¿Cuánto dura un proyecto web?" [ref=f46e389] [cursor=pointer]
+          - group [ref=f46e394]:
+            - generic "¿Cómo se calcula el precio?" [ref=f46e395] [cursor=pointer]
+          - group [ref=f46e400]:
+            - generic "¿Quién prepara los contenidos?" [ref=f46e401] [cursor=pointer]
+          - group [ref=f46e406]:
+            - generic "¿Podré actualizar el sitio yo mismo?" [ref=f46e407] [cursor=pointer]
+          - group [ref=f46e412]:
+            - generic "¿A nombre de quién quedan el dominio y el alojamiento?" [ref=f46e413] [cursor=pointer]
+          - group [ref=f46e418]:
+            - generic "¿Un rediseño afectará a nuestro posicionamiento?" [ref=f46e419] [cursor=pointer]
+          - group [ref=f46e424]:
+            - generic "¿Es un riesgo trabajar con un estudio de una sola persona?" [ref=f46e425] [cursor=pointer]
+    - region [ref=f46e430]:
+      - generic [ref=f46e431]:
+        - generic [ref=f46e432]:
+          - paragraph [ref=f46e433]: Contacto
+          - heading "Hablemos de su proyecto." [level=2] [ref=f46e434]
+          - paragraph [ref=f46e435]: Cuéntenos en pocas frases lo que quiere hacer. Su mensaje llega directamente al estudio y se responde personalmente.
+          - heading "Contacto directo" [level=3] [ref=f46e436]
+          - list [ref=f46e437]:
+            - listitem [ref=f46e438]:
+              - link "Correo salihefeggl@gmail.com" [ref=f46e439] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+                - generic [ref=f46e443]:
+                  - generic [ref=f46e444]: Correo
+                  - generic [ref=f46e445]: salihefeggl@gmail.com
+            - listitem [ref=f46e448]:
+              - link "WhatsApp 0552 479 32 33" [ref=f46e449] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+                - generic [ref=f46e453]:
+                  - generic [ref=f46e454]: WhatsApp
+                  - generic [ref=f46e455]: 0552 479 32 33
+            - listitem [ref=f46e458]:
+              - link "Teléfono 0552 479 32 33" [ref=f46e459] [cursor=pointer]:
+                - /url: tel:+905524793233
+                - generic [ref=f46e463]:
+                  - generic [ref=f46e464]: Teléfono
+                  - generic [ref=f46e465]: 0552 479 32 33
+        - generic [ref=f46e471]:
+          - generic [ref=f46e473]:
+            - text: Website
+            - textbox [ref=f46e474]
+          - generic [ref=f46e475]:
+            - generic [ref=f46e476]: Su nombre
+            - textbox "Su nombre" [ref=f46e477]
+          - generic [ref=f46e478]:
+            - generic [ref=f46e479]: Su correo electrónico
+            - textbox "Su correo electrónico" [ref=f46e480]
+          - generic [ref=f46e481]:
+            - generic [ref=f46e482]: Empresa (opcional)
+            - textbox "Empresa (opcional)" [ref=f46e483]
+          - generic [ref=f46e484]:
+            - generic [ref=f46e485]: Tipo de proyecto
+            - combobox "Tipo de proyecto" [ref=f46e487] [cursor=pointer]:
+              - option "Elija una opción" [disabled] [selected]
+              - option "Sitio corporativo"
+              - option "Landing page"
+              - option "Comercio electrónico"
+              - option "Aplicación web"
+              - option "Diseño UI/UX"
+              - option "Rediseño"
+              - option "SEO y rendimiento"
+              - option "Mantenimiento y soporte"
+              - option "Aún no lo sé"
+          - generic [ref=f46e488]:
+            - generic [ref=f46e489]: Háblenos brevemente de su proyecto
+            - paragraph [ref=f46e490]: Basta con su objetivo, su sitio actual si lo tiene y el plazo que tiene en mente.
+            - textbox "Háblenos brevemente de su proyecto" [ref=f46e491]
+          - generic [ref=f46e492]:
+            - paragraph [ref=f46e493]: La información de este formulario se usa solo para responder a su solicitud.
+            - button "Enviar mensaje" [ref=f46e494]
+  - contentinfo [ref=f46e499]:
+    - generic [ref=f46e500]:
+      - generic [ref=f46e501]:
+        - generic [ref=f46e502]:
+          - link "Inicio de StackWD" [ref=f46e503] [cursor=pointer]:
+            - /url: /es/
+            - generic [ref=f46e504]: StackWD
+          - paragraph [ref=f46e510]: Sitios web construidos capa a capa.
+        - navigation [ref=f46e511]:
+          - heading "Mapa del sitio" [level=2] [ref=f46e512]
+          - list [ref=f46e513]:
+            - listitem [ref=f46e514]:
+              - link "Servicios" [ref=f46e515] [cursor=pointer]:
+                - /url: /es/#services
+            - listitem [ref=f46e516]:
+              - link "Proyectos" [ref=f46e517] [cursor=pointer]:
+                - /url: /es/#work
+            - listitem [ref=f46e518]:
+              - link "Proceso" [ref=f46e519] [cursor=pointer]:
+                - /url: /es/#process
+            - listitem [ref=f46e520]:
+              - link "Estudio" [ref=f46e521] [cursor=pointer]:
+                - /url: /es/#about
+            - listitem [ref=f46e522]:
+              - link "FAQ" [ref=f46e523] [cursor=pointer]:
+                - /url: /es/#faq
+            - listitem [ref=f46e524]:
+              - link "Contacto" [ref=f46e525] [cursor=pointer]:
+                - /url: /es/#contact
+        - generic [ref=f46e526]:
+          - heading "Contacto" [level=2] [ref=f46e527]
+          - list [ref=f46e528]:
+            - listitem [ref=f46e529]:
+              - link "salihefeggl@gmail.com" [ref=f46e530] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+            - listitem [ref=f46e533]:
+              - link "WhatsApp" [ref=f46e534] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+            - listitem [ref=f46e537]:
+              - link "0552 479 32 33" [ref=f46e538] [cursor=pointer]:
+                - /url: tel:+905524793233
+      - paragraph [aria-hidden]: StackWD
+      - generic [ref=f46e541]:
+        - paragraph [ref=f46e542]: © 2026 StackWD. Todos los derechos reservados.
+        - generic [ref=f46e543]:
+          - list "Idioma" [ref=f46e544]:
+            - listitem [ref=f46e545]:
+              - link "Türkçe" [ref=f46e546] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f46e547]:
+              - link "English" [ref=f46e548] [cursor=pointer]:
+                - /url: /en/
+            - listitem [ref=f46e549]:
+              - link "Español" [ref=f46e550] [cursor=pointer]:
+                - /url: /es/
+          - button "Cambiar a tema claro" [ref=f46e551]
+          - link "Volver arriba" [ref=f46e554] [cursor=pointer]:
+            - /url: "#top"

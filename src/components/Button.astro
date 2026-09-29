@@ -1,0 +1,54 @@
+---
+/**
+ * Birincil: aksan zemin, tam yuvarlak, sağda dairesel ikon yuvası.
+ * İkincil: şeffaf zemin, işlevsel kenar.
+ */
+import Icon, { type IconName } from './Icon.astro';
+
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary';
+  icon?: IconName | false;
+  class?: string;
+  [key: string]: unknown;
+}
+
+const { href, variant = 'primary', icon = 'arrow-up-right', class: className = '', ...rest } = Astro.props;
+---
+
+{
+  variant === 'primary' ? (
+    <a
+      href={href}
+      class:list={[
+        'group inline-flex h-12 min-w-11 items-center gap-3 rounded-full bg-accent text-button whitespace-nowrap text-on-accent',
+        icon ? 'pr-1.5 pl-6' : 'px-6',
+        'transition-[background-color,scale] duration-(--dur-base) ease-out hover:bg-accent-hover motion-safe:active:scale-[0.98]',
+        className,
+      ]}
+      {...rest}
+    >
+      <span>
+        <slot />
+      </span>
+      {icon && (
+        <span class="grid size-9 place-items-center rounded-full bg-on-accent/15 transition-[translate] duration-(--dur-base) ease-out motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-px">
+          <Icon name={icon} class="size-[18px]" />
+        </span>
+      )}
+    </a>
+  ) : (
+    <a
+      href={href}
+      class:list={[
+        'inline-flex h-12 items-center gap-2 rounded-full border border-hairline-strong px-6 text-button whitespace-nowrap text-ink',
+        'transition-colors duration-(--dur-base) ease-out hover:bg-sunk',
+        className,
+      ]}
+      {...rest}
+    >
+      <slot />
+      {icon && <Icon name={icon} class="size-[18px]" />}
+    </a>
+  )
+}

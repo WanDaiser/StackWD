@@ -1,0 +1,16 @@
+---
+import CasePage from '../../../components/CasePage.astro';
+import { getStaticCasePaths, type WorkEntry } from '../../../lib/work';
+
+export async function getStaticPaths() {
+  return getStaticCasePaths('es');
+}
+
+interface Props {
+  entry: WorkEntry;
+  next?: WorkEntry;
+}
+const { entry, next } = Astro.props;
+---
+
+<CasePage lang="es" entry={entry} next={next} />

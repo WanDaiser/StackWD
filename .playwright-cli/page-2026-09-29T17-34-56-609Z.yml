@@ -1,0 +1,129 @@
+- generic [active] [ref=f34e1]:
+  - banner [ref=f34e2]:
+    - link "Saltar al contenido" [ref=f34e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f34e4]:
+      - link "Inicio de StackWD" [ref=f34e5] [cursor=pointer]:
+        - /url: /es/
+        - generic [ref=f34e6]: StackWD
+      - navigation "Menú principal" [ref=f34e12]:
+        - list [ref=f34e13]:
+          - listitem [ref=f34e14]:
+            - link "Servicios" [ref=f34e15] [cursor=pointer]:
+              - /url: /es/#services
+          - listitem [ref=f34e16]:
+            - link "Proyectos" [ref=f34e17] [cursor=pointer]:
+              - /url: /es/#work
+          - listitem [ref=f34e18]:
+            - link "Proceso" [ref=f34e19] [cursor=pointer]:
+              - /url: /es/#process
+          - listitem [ref=f34e20]:
+            - link "Estudio" [ref=f34e21] [cursor=pointer]:
+              - /url: /es/#about
+      - generic [ref=f34e22]:
+        - group [ref=f34e23]:
+          - generic "Idioma, ES" [ref=f34e24] [cursor=pointer]:
+            - generic [ref=f34e27]: Idioma,
+            - generic [ref=f34e28]: ES
+        - button "Cambiar a tema claro" [ref=f34e29]
+        - link "Cuéntenos su proyecto" [ref=f34e33] [cursor=pointer]:
+          - /url: /es/#contact
+  - main [ref=f34e38]:
+    - article [ref=f34e39]:
+      - generic [ref=f34e40]:
+        - link "Todos los proyectos" [ref=f34e41] [cursor=pointer]:
+          - /url: /es/#work
+        - generic [ref=f34e44]: Trabajo conceptual
+        - heading "Denge Fisioterapia" [level=1] [ref=f34e46]
+        - paragraph [ref=f34e47]: Un concepto de aplicación web para una clínica de fisioterapia que reúne el calendario de sesiones y el flujo de reservas de pacientes en un solo lugar.
+        - generic [ref=f34e48]:
+          - generic [ref=f34e49]:
+            - term [ref=f34e50]: Cliente
+            - definition [ref=f34e51]: Trabajo conceptual
+          - generic [ref=f34e52]:
+            - term [ref=f34e53]: Sector
+            - definition [ref=f34e54]: Salud
+          - generic [ref=f34e55]:
+            - term [ref=f34e56]: Año
+            - definition [ref=f34e57]: "2026"
+          - generic [ref=f34e58]:
+            - term [ref=f34e59]: Servicios
+            - definition [ref=f34e60]: Aplicación web, Diseño UI/UX
+      - img "Calendario semanal y pantalla móvil de reserva de la aplicación Denge" [ref=f34e64]
+      - generic [ref=f34e66]:
+        - blockquote [ref=f34e67]:
+          - paragraph [ref=f34e68]: Este es un trabajo conceptual. La marca, los contenidos y las personas de la interfaz son ficticios. No se hizo para un cliente real.
+        - heading "Problema" [level=2] [ref=f34e69]
+        - paragraph [ref=f34e70]: Las clínicas suelen gestionar las citas entre llamadas, mensajes y una agenda en papel. Eso provoca sesiones solapadas, huecos vacíos y recordatorios tardíos. El equipo necesitaba ver la semana de un vistazo y los pacientes debían poder reservar con pocos toques.
+        - heading "Enfoque" [level=2] [ref=f34e71]
+        - paragraph [ref=f34e72]: En la parte de la clínica, el calendario semanal pasó a ser la pantalla principal. Los tipos de sesión se distinguen por color y por una etiqueta escrita a la vez, no solo por color, para que también los vean quienes tienen dificultad para distinguir colores.
+        - paragraph [ref=f34e73]:
+          - img "Calendario semanal de sesiones del equipo de la clínica" [ref=f34e74]
+        - paragraph [ref=f34e75]: El panel de nueva cita permanece abierto junto al calendario. Las horas ocupadas aparecen tachadas y no se pueden elegir, lo que evita las citas dobles antes de que ocurran.
+        - heading "Resultado" [level=2] [ref=f34e76]
+        - paragraph [ref=f34e77]: "La parte del paciente es un flujo móvil de tres pasos: servicio, fecha y hora, y confirmación. Cada paso pide una sola decisión y la política de cambios se indica con claridad antes de confirmar. El concepto une la gestión de la clínica y la experiencia del paciente en un mismo sistema de diseño."
+        - paragraph [ref=f34e78]:
+          - img "Pantalla móvil donde el paciente elige la hora, junto al panel de nueva cita de la clínica" [ref=f34e79]
+      - navigation "Siguiente caso" [ref=f34e80]:
+        - link "Siguiente caso Kıyı Arquitectura" [ref=f34e81] [cursor=pointer]:
+          - /url: /es/proyectos/kiyi-mimarlik/
+          - text: Siguiente caso
+          - generic [ref=f34e82]: Kıyı Arquitectura
+  - contentinfo [ref=f34e87]:
+    - generic [ref=f34e88]:
+      - generic [ref=f34e89]:
+        - generic [ref=f34e90]:
+          - link "Inicio de StackWD" [ref=f34e91] [cursor=pointer]:
+            - /url: /es/
+            - generic [ref=f34e92]: StackWD
+          - paragraph [ref=f34e98]: Sitios web construidos capa a capa.
+        - navigation [ref=f34e99]:
+          - heading "Mapa del sitio" [level=2] [ref=f34e100]
+          - list [ref=f34e101]:
+            - listitem [ref=f34e102]:
+              - link "Servicios" [ref=f34e103] [cursor=pointer]:
+                - /url: /es/#services
+            - listitem [ref=f34e104]:
+              - link "Proyectos" [ref=f34e105] [cursor=pointer]:
+                - /url: /es/#work
+            - listitem [ref=f34e106]:
+              - link "Proceso" [ref=f34e107] [cursor=pointer]:
+                - /url: /es/#process
+            - listitem [ref=f34e108]:
+              - link "Estudio" [ref=f34e109] [cursor=pointer]:
+                - /url: /es/#about
+            - listitem [ref=f34e110]:
+              - link "FAQ" [ref=f34e111] [cursor=pointer]:
+                - /url: /es/#faq
+            - listitem [ref=f34e112]:
+              - link "Contacto" [ref=f34e113] [cursor=pointer]:
+                - /url: /es/#contact
+        - generic [ref=f34e114]:
+          - heading "Contacto" [level=2] [ref=f34e115]
+          - list [ref=f34e116]:
+            - listitem [ref=f34e117]:
+              - link "salihefeggl@gmail.com" [ref=f34e118] [cursor=pointer]:
+                - /url: mailto:salihefeggl@gmail.com
+            - listitem [ref=f34e121]:
+              - link "WhatsApp" [ref=f34e122] [cursor=pointer]:
+                - /url: https://wa.me/905524793233
+            - listitem [ref=f34e125]:
+              - link "0552 479 32 33" [ref=f34e126] [cursor=pointer]:
+                - /url: tel:+905524793233
+      - paragraph [aria-hidden]: StackWD
+      - generic [ref=f34e129]:
+        - paragraph [ref=f34e130]: © 2026 StackWD. Todos los derechos reservados.
+        - generic [ref=f34e131]:
+          - list "Idioma" [ref=f34e132]:
+            - listitem [ref=f34e133]:
+              - link "Türkçe" [ref=f34e134] [cursor=pointer]:
+                - /url: /isler/denge-fizyoterapi/
+            - listitem [ref=f34e135]:
+              - link "English" [ref=f34e136] [cursor=pointer]:
+                - /url: /en/work/denge-fizyoterapi/
+            - listitem [ref=f34e137]:
+              - link "Español" [ref=f34e138] [cursor=pointer]:
+                - /url: /es/proyectos/denge-fizyoterapi/
+          - button "Cambiar a tema claro" [ref=f34e139]
+          - link "Volver arriba" [ref=f34e142] [cursor=pointer]:
+            - /url: "#top"

@@ -1,0 +1,263 @@
+/*
+ * StackWD tasarım token'ları.
+ * Tek kaynak: DESIGN.md. Buradaki değerler dışında renk, font, köşe, gölge ya da süre kullanılmaz.
+ */
+@import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque/opsz.css';
+@import '@fontsource-variable/instrument-sans/index.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+/* ---------- 1. Ham palet (açık / koyu) ---------- */
+:root {
+  --canvas-l: #f1f0ec;          --canvas-d: #0d0e10;
+  --surface-l: #f9f8f5;         --surface-d: #16181b;
+  --surface-sunk-l: #e6e4de;    --surface-sunk-d: #1e2024;
+  --ink-l: #121417;             --ink-d: #edeae2;
+  --body-l: #2e3136;            --body-d: #c9c6be;
+  --muted-l: #5a5e66;           --muted-d: #9a9da3;
+  --hairline-l: #d8d5cd;        --hairline-d: #2a2d32;
+  --hairline-strong-l: #7c8087; --hairline-strong-d: #6b6f77;
+  --accent-l: #2b40d6;          --accent-d: #8c99ff;
+  --accent-hover-l: #1f31b3;    --accent-hover-d: #a9b3ff;
+  --on-accent-l: #f9f8f5;       --on-accent-d: #0d0e10;
+  --error-l: #b3261e;           --error-d: #ff8a80;
+  --success-l: #2f7d4f;         --success-d: #7fd19b;
+}
+
+/* ---------- 2. Rol token'ları ---------- */
+/* Varsayılan tema koyudur (Linear referansı). Ziyaretçi açık temayı seçerse data-theme="light" olur. */
+:root {
+  color-scheme: dark;
+  --canvas: light-dark(var(--canvas-l), var(--canvas-d));
+  --surface: light-dark(var(--surface-l), var(--surface-d));
+  --surface-sunk: light-dark(var(--surface-sunk-l), var(--surface-sunk-d));
+  --ink: light-dark(var(--ink-l), var(--ink-d));
+  --body: light-dark(var(--body-l), var(--body-d));
+  --muted: light-dark(var(--muted-l), var(--muted-d));
+  --hairline: light-dark(var(--hairline-l), var(--hairline-d));
+  --hairline-strong: light-dark(var(--hairline-strong-l), var(--hairline-strong-d));
+  --accent: light-dark(var(--accent-l), var(--accent-d));
+  --accent-hover: light-dark(var(--accent-hover-l), var(--accent-hover-d));
+  --on-accent: light-dark(var(--on-accent-l), var(--on-accent-d));
+  --error: light-dark(var(--error-l), var(--error-d));
+  --success: light-dark(var(--success-l), var(--success-d));
+  --grain-opacity: 0.07;
+  --glow-strength: 20%;
+}
+:root[data-theme='light'] {
+  color-scheme: light;
+  --grain-opacity: 0.05;
+  --glow-strength: 14%;
+}
+
+/* light-dark() desteklemeyen eski tarayıcılar için aynı eşleme. */
+@supports not (color: light-dark(white, black)) {
+  :root {
+    --canvas: var(--canvas-d); --surface: var(--surface-d); --surface-sunk: var(--surface-sunk-d);
+    --ink: var(--ink-d); --body: var(--body-d); --muted: var(--muted-d);
+    --hairline: var(--hairline-d); --hairline-strong: var(--hairline-strong-d);
+    --accent: var(--accent-d); --accent-hover: var(--accent-hover-d); --on-accent: var(--on-accent-d);
+    --error: var(--error-d); --success: var(--success-d);
+  }
+  :root[data-theme='light'] {
+    --canvas: var(--canvas-l); --surface: var(--surface-l); --surface-sunk: var(--surface-sunk-l);
+    --ink: var(--ink-l); --body: var(--body-l); --muted: var(--muted-l);
+    --hairline: var(--hairline-l); --hairline-strong: var(--hairline-strong-l);
+    --accent: var(--accent-l); --accent-hover: var(--accent-hover-l); --on-accent: var(--on-accent-l);
+    --error: var(--error-l); --success: var(--success-l);
+  }
+}
+
+/* ---------- 3. Boşluk, hareket, katman ---------- */
+:root {
+  --gutter: clamp(16px, 4vw, 48px);
+  --section: clamp(96px, 12vw, 160px);
+  --container: 1280px;
+  --header-h: 72px;
+
+  --dur-fast: 150ms;
+  --dur-base: 280ms;
+  --dur-slow: 600ms;
+  --dur-scene: 900ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --stagger: 80ms;
+
+  --z-nav: 40;
+  --z-menu: 50;
+  --z-grain: 60;
+}
+
+/* ---------- 4. Tailwind teması: yalnızca token'lar ---------- */
+@theme {
+  --color-*: initial;
+  --font-*: initial;
+  --shadow-*: initial;
+  --radius-*: initial;
+
+  --text-display-xl: clamp(2.75rem, 1rem + 6.4vw, 7rem);
+  --text-display-xl--line-height: 0.98;
+  --text-display-xl--letter-spacing: -0.036em;
+  --text-display-xl--font-weight: 460;
+  --text-display-lg: clamp(2.25rem, 1.2rem + 3.6vw, 4.5rem);
+  --text-display-lg--line-height: 1.02;
+  --text-display-lg--letter-spacing: -0.032em;
+  --text-display-lg--font-weight: 460;
+  --text-display-md: clamp(1.5rem, 1.2rem + 1.3vw, 2.5rem);
+  --text-display-md--line-height: 1.12;
+  --text-display-md--letter-spacing: -0.022em;
+  --text-display-md--font-weight: 480;
+  --text-title: 1.25rem;
+  --text-title--line-height: 1.3;
+  --text-title--letter-spacing: -0.005em;
+  --text-title--font-weight: 550;
+  --text-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-lead--line-height: 1.55;
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.08em;
+  --text-eyebrow--font-weight: 500;
+  --text-button: 0.9375rem;
+  --text-button--line-height: 1;
+  --text-button--font-weight: 550;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-sunk: var(--surface-sunk);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+  --color-error: var(--error);
+  --color-success: var(--success);
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --font-display: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Instrument Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius-input: 8px;
+  --radius-card: 16px;
+  --radius-full: 9999px;
+
+  --shadow-lift: 0 1px 0 var(--hairline), 0 16px 40px -20px color-mix(in oklab, var(--ink) 16%, transparent);
+
+  --ease-out: var(--ease-out);
+  --ease-in-out: var(--ease-in-out);
+}
+
+/* ---------- 5. Temel stiller ---------- */
+@layer base {
+  html {
+    background-color: var(--canvas);
+    color: var(--body);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: calc(var(--header-h) + 16px);
+    accent-color: var(--accent);
+    interpolate-size: allow-keywords;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+  html:has(dialog[open]) { overflow: hidden; }
+
+  /* Lenis: yumuşak kaydırma etkinken tarayıcının kendi yumuşatması kapanır. */
+  html.lenis, html.lenis body { height: auto; }
+  html.lenis.lenis-smooth { scroll-behavior: auto !important; }
+  html.lenis.lenis-stopped { overflow: clip; }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--canvas);
+    overflow-x: clip;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-optical-sizing: auto;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+
+  ::selection { background-color: var(--accent); color: var(--on-accent); }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  /* Çapa ile odaklanan bölümler çerçeve göstermez. */
+  [tabindex='-1']:focus { outline: none; }
+
+  /* Gren dokusu: sabit, tıklamayı engellemeyen tek katman. */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-grain);
+    pointer-events: none;
+    opacity: var(--grain-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1.4 -0.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* ---------- 6. Yardımcılar ---------- */
+@utility container-page {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-eyebrow);
+  line-height: var(--text-eyebrow--line-height);
+  letter-spacing: var(--text-eyebrow--letter-spacing);
+  font-weight: var(--text-eyebrow--font-weight);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@utility measure {
+  max-width: 65ch;
+}
+
+/* ---------- 7. Hareket ---------- */
+@keyframes rise-in {
+  from { opacity: 0; translate: 0 16px; }
+}
+
+/* Sayfa açılışı: yalnızca hero'da, hareket tercihine saygılı. */
+@media (prefers-reduced-motion: no-preference) {
+  .enter {
+    animation: rise-in var(--dur-slow) var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * var(--stagger) + 80ms);
+  }
+}
+
+/* Kaydırmayla gelen bölümler: dekoratif, desteklenmeyen tarayıcıda içerik doğrudan görünür. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    .reveal {
+      animation: rise-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+  }
+}

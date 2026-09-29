@@ -1,0 +1,59 @@
+- generic [ref=f1e2]:
+  - navigation [ref=f1e3]:
+    - generic [ref=f1e4]: KIYI
+    - generic [ref=f1e5]:
+      - generic [ref=f1e6]: Projeler
+      - generic [ref=f1e7]: Stüdyo
+      - generic [ref=f1e8]: Yaklaşım
+      - generic [ref=f1e9]: Yayınlar
+      - generic [ref=f1e10]: İletişim
+  - generic [ref=f1e11]:
+    - generic [ref=f1e12]:
+      - paragraph [ref=f1e13]: Mimarlık ve iç mimarlık
+      - heading "Denizle konuşan yapılar." [level=1] [ref=f1e14]
+      - paragraph [ref=f1e15]: Ege kıyısında yere, ışığa ve rüzgâra göre biçimlenen konut ve kamu yapıları tasarlıyoruz.
+      - generic [ref=f1e16]:
+        - text: Projeleri inceleyin
+        - generic [ref=f1e17]: →
+    - generic [ref=f1e18]: Kaya Evi, Datça
+  - generic [ref=f1e33]:
+    - heading "Seçili projeler" [level=2] [ref=f1e34]
+    - generic [ref=f1e35]: Konut, kamu, iç mimarlık
+  - generic [ref=f1e36]:
+    - generic [ref=f1e37]:
+      - generic [ref=f1e38]: "01"
+      - generic [ref=f1e39]: Kaya Evi
+      - generic [ref=f1e40]: Datça, konut
+      - generic [ref=f1e41]: Tamamlandı
+      - generic [ref=f1e42]: ↗
+    - generic [ref=f1e43]:
+      - generic [ref=f1e44]: "02"
+      - generic [ref=f1e45]: Zeytinlik Kütüphanesi
+      - generic [ref=f1e46]: Ayvalık, kamu
+      - generic [ref=f1e47]: Yapım aşamasında
+      - generic [ref=f1e48]: ↗
+    - generic [ref=f1e49]:
+      - generic [ref=f1e50]: "03"
+      - generic [ref=f1e51]: Liman Atölyeleri
+      - generic [ref=f1e52]: İzmir, dönüşüm
+      - generic [ref=f1e53]: Tasarım
+      - generic [ref=f1e54]: ↗
+    - generic [ref=f1e55]:
+      - generic [ref=f1e56]: "04"
+      - generic [ref=f1e57]: Taş Avlu
+      - generic [ref=f1e58]: Bozcaada, konut
+      - generic [ref=f1e59]: Tamamlandı
+      - generic [ref=f1e60]: ↗
+  - generic [ref=f1e61]:
+    - heading "Yaklaşım" [level=2] [ref=f1e62]
+    - generic [ref=f1e63]: Her proje yerinde başlar
+  - generic [ref=f1e64]:
+    - generic [ref=f1e65]:
+      - heading "Yeri okumak" [level=3] [ref=f1e66]
+      - paragraph [ref=f1e67]: Her tasarım, arazinin eğimi, rüzgârın yönü ve günün ışığı haritalanarak başlar.
+    - generic [ref=f1e68]:
+      - heading "Az malzeme" [level=3] [ref=f1e69]
+      - paragraph [ref=f1e70]: Yerel taş, ahşap ve kireç; bakımı kolay, zamanla güzelleşen yüzeyler.
+    - generic [ref=f1e71]:
+      - heading "Uzun ömür" [level=3] [ref=f1e72]
+      - paragraph [ref=f1e73]: Yapıyı mevsimlerle birlikte değişen kullanım biçimlerine göre esnek kurgularız.

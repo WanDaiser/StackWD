@@ -1,0 +1,72 @@
+<!doctype html>
+<!--
+  Open Graph görseli şablonu (1200x630). Üretim adımları CLAUDE.md içinde.
+  Metni değiştirirseniz görseli yeniden üretin.
+-->
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: 'Bricolage';
+        src: url('/node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-opsz-normal.woff2') format('woff2');
+        font-weight: 200 800;
+      }
+      @font-face {
+        font-family: 'Bricolage';
+        src: url('/node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-ext-opsz-normal.woff2') format('woff2');
+        font-weight: 200 800;
+        unicode-range: U+0100-02BA, U+1E00-1E9F;
+      }
+      @font-face {
+        font-family: 'Instrument';
+        src: url('/node_modules/@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2') format('woff2');
+        font-weight: 400 700;
+      }
+      @font-face {
+        font-family: 'Instrument';
+        src: url('/node_modules/@fontsource-variable/instrument-sans/files/instrument-sans-latin-ext-wght-normal.woff2') format('woff2');
+        font-weight: 400 700;
+        unicode-range: U+0100-02BA, U+1E00-1E9F;
+      }
+      * { margin: 0; box-sizing: border-box; }
+      html, body { width: 1200px; height: 630px; }
+      body {
+        background:
+          radial-gradient(50% 70% at 80% 55%, rgb(140 153 255 / 0.22), transparent 70%),
+          #0d0e10;
+        color: #edeae2;
+        font-family: 'Instrument', sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+      .wrap { position: absolute; inset: 72px 80px; display: flex; flex-direction: column; justify-content: space-between; }
+      .brand { display: flex; align-items: center; gap: 14px; font-family: 'Bricolage'; font-size: 34px; font-weight: 560; letter-spacing: -0.03em; }
+      h1 { font-family: 'Bricolage'; font-weight: 460; font-size: 92px; line-height: 0.98; letter-spacing: -0.036em; max-width: 11ch; }
+      .foot { display: flex; justify-content: space-between; font-size: 24px; color: #9a9da3; }
+      svg.layers { position: absolute; right: 40px; top: 70px; width: 520px; }
+    </style>
+  </head>
+  <body>
+    <svg class="layers" viewBox="0 0 620 640" aria-hidden="true">
+      <g fill="#16181b" fill-opacity="0.85" stroke="#6b6f77" stroke-width="1.4">
+        <path transform="translate(262 494) matrix(0.866 0.5 -0.866 0.5 0 0)" d="M-110-110h220v220h-220z" />
+        <path transform="translate(262 372) matrix(0.866 0.5 -0.866 0.5 0 0)" d="M-110-110h220v220h-220z" />
+        <path transform="translate(262 250) matrix(0.866 0.5 -0.866 0.5 0 0)" d="M-110-110h220v220h-220z" fill="#23264a" stroke="#8c99ff" />
+        <path transform="translate(262 128) matrix(0.866 0.5 -0.866 0.5 0 0)" d="M-110-110h220v220h-220z" />
+      </g>
+    </svg>
+    <div class="wrap">
+      <div class="brand">
+        <svg width="40" height="40" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M14 15.5 25 21l-11 5.5L3 21z" fill="none" stroke="#edeae2" stroke-width="1.5" stroke-linejoin="round" opacity=".45" />
+          <path d="M14 9.5 25 15l-11 5.5L3 15z" fill="none" stroke="#edeae2" stroke-width="1.5" stroke-linejoin="round" opacity=".7" />
+          <path d="M14 3.5 25 9l-11 5.5L3 9z" fill="#8c99ff" stroke="#8c99ff" stroke-width="1.5" stroke-linejoin="round" />
+        </svg>
+        StackWD
+      </div>
+      <h1>Katman katman kurulan web siteleri.</h1>
+      <div class="foot"><span>Web tasarım ve geliştirme stüdyosu</span><span>Türkçe, English, Español</span></div>
+    </div>
+  </body>
+</html>

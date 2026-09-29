@@ -1,0 +1,49 @@
+---
+/**
+ * Seçili işler (BASIC referansı): büyük görsel alanlı vaka kartları.
+ * İlk vaka tam genişlikte, sonrakiler asimetrik ikili düzende.
+ */
+import SectionHeader from './SectionHeader.astro';
+import WorkCard from './WorkCard.astro';
+import { content } from '../i18n/content';
+import type { Lang } from '../i18n/ui';
+import { sectionIds } from '../i18n/utils';
+import { getWork } from '../lib/work';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const c = content[lang].work;
+const cases = await getWork(lang);
+
+// Kart düzeni: [genişlik sınıfı, görsel oranı, sizes]
+const layout = [
+  { col: 'lg:col-span-12', ratio: 'aspect-[4/3] md:aspect-[16/9]', sizes: '(min-width: 1344px) 1280px, 94vw' },
+  { col: 'lg:col-span-7', ratio: 'aspect-[4/3]', sizes: '(min-width: 1024px) 56vw, 94vw' },
+  { col: 'lg:col-span-5 lg:mt-28', ratio: 'aspect-[4/5]', sizes: '(min-width: 1024px) 40vw, 94vw' },
+];
+---
+
+<section id={sectionIds.work} class="border-y border-hairline bg-surface py-(--section)" aria-labelledby="work-title">
+  <div class="container-page">
+    <SectionHeader id="work-title" eyebrow={c.eyebrow} title={c.title} lead={c.lead} />
+
+    <div class="mt-14 grid gap-x-6 gap-y-16 md:grid-cols-2 lg:mt-20 lg:grid-cols-12 lg:gap-y-24">
+      {
+        cases.map((entry, i) => {
+          const l = layout[i % layout.length];
+          return (
+            <WorkCard
+              lang={lang}
+              entry={entry}
+              ratio={l.ratio}
+              sizes={l.sizes}
+              class:list={[l.col, i % layout.length === 0 ? 'md:col-span-2' : '']}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

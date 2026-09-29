@@ -1,0 +1,74 @@
+---
+/**
+ * İki durumlu tema düğmesi: varsayılan koyu tema ya da açık tema.
+ * Seçim localStorage'da tutulur. İlk boyamadaki geçişi BaseLayout'taki satır içi script önler.
+ */
+import Icon from './Icon.astro';
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  class?: string;
+}
+const { lang, class: className = '' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<button
+  type="button"
+  class:list={[
+    'theme-toggle grid size-11 place-items-center rounded-full text-ink transition-colors duration-(--dur-base) hover:bg-sunk',
+    className,
+  ]}
+  data-label-dark={t('a11y.toDark')}
+  data-label-light={t('a11y.toLight')}
+  aria-label={t('a11y.toLight')}
+>
+  <Icon name="moon" class="icon-moon size-5" />
+  <Icon name="sun" class="icon-sun size-5" />
+</button>
+
+<style>
+  /* Varsayılan koyu tema: açık temaya geçiş için güneş gösterilir. */
+  .theme-toggle :global(.icon-moon) { display: none; }
+  :global(:root[data-theme='light']) .theme-toggle :global(.icon-moon) { display: block; }
+  :global(:root[data-theme='light']) .theme-toggle :global(.icon-sun) { display: none; }
+</style>
+
+<script>
+  const KEY = 'color-scheme';
+  const DEFAULT = 'dark';
+  const root = document.documentElement;
+  const meta = document.querySelector<HTMLMetaElement>('meta[name="color-scheme"]');
+
+  const write = (value: string | null) => {
+    try { value ? localStorage.setItem(KEY, value) : localStorage.removeItem(KEY); } catch { /* depolama kapalı */ }
+  };
+  const current = () => (root.dataset.theme === 'light' ? 'light' : DEFAULT);
+
+  function apply(theme: string) {
+    if (theme === DEFAULT) {
+      delete root.dataset.theme;
+      write(null);
+    } else {
+      root.dataset.theme = theme;
+      write(theme);
+    }
+    meta?.setAttribute('content', theme);
+    syncLabels();
+  }
+
+  function syncLabels() {
+    const isDark = current() === 'dark';
+    document.querySelectorAll<HTMLButtonElement>('.theme-toggle').forEach((btn) => {
+      btn.setAttribute('aria-label', (isDark ? btn.dataset.labelLight : btn.dataset.labelDark) ?? '');
+    });
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.theme-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => apply(current() === 'dark' ? 'light' : 'dark'));
+  });
+
+  syncLabels();
+</script>

@@ -1,0 +1,75 @@
+---
+/**
+ * Vaka kartı. Tüm kart tıklanabilir, ama bağlantı yalnızca başlıktır (ekran okuyucu için kısa ve net).
+ * Görsel çerçevesi dış kabuk ve iç çekirdekten oluşur: katman fikrinin küçük bir tekrarı.
+ */
+import CaseCover from './CaseCover.astro';
+import Icon from './Icon.astro';
+import { content } from '../i18n/content';
+import type { Lang } from '../i18n/ui';
+import { workPath } from '../i18n/utils';
+import { slugOf, type WorkEntry } from '../lib/work';
+
+interface Props {
+  lang: Lang;
+  entry: WorkEntry;
+  ratio: string;
+  sizes: string;
+  class?: string;
+}
+const { lang, entry, ratio, sizes, class: className = '' } = Astro.props;
+const c = content[lang].work;
+const d = entry.data;
+const href = workPath(lang, slugOf(entry));
+---
+
+<article class:list={['work-card reveal group relative', className]}>
+  <div class="rounded-card border border-hairline bg-canvas p-1.5">
+    <div class:list={['overflow-hidden rounded-[10px]', ratio]}>
+      <div class="size-full transition-transform duration-(--dur-slow) ease-out motion-safe:group-hover:scale-[1.02]">
+        <CaseCover cover={d.cover} alt={d.coverAlt} tone={d.tone} pendingLabel={c.coverPending} sizes={sizes} />
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">
+    {d.placeholder && <span class="badge">{c.placeholder}</span>}
+    {d.concept && <span class="badge badge-accent">{c.concept}</span>}
+    <p class="text-small text-muted">{d.sector}, {d.year}</p>
+  </div>
+
+  <h3 class="mt-3 text-display-md">
+    <a href={href} class="card-link rounded-sm after:absolute after:inset-0 after:content-['']">{d.title}</a>
+  </h3>
+  <p class="mt-3 max-w-[60ch] text-body">{d.summary}</p>
+  <span class="mt-5 inline-flex items-center gap-2 text-small font-medium text-ink" aria-hidden="true">
+    {c.viewCase}
+    <Icon name="arrow-up-right" class="size-4 transition-[translate] duration-(--dur-base) motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5" />
+  </span>
+</article>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    height: 26px;
+    padding-inline: 10px;
+    border-radius: 9999px;
+    border: 1px solid var(--hairline-strong);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .badge-accent {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .card-link:focus-visible {
+    outline: none;
+  }
+  .work-card:has(.card-link:focus-visible) {
+    outline: 2px solid var(--accent);
+    outline-offset: 8px;
+    border-radius: var(--radius-card);
+  }
+</style>

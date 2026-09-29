@@ -1,0 +1,27 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - link "İçeriğe geç" [ref=f6e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=f6e4]:
+      - link "StackWD ana sayfa" [ref=f6e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f6e6]: StackWD
+      - generic [ref=f6e12]:
+        - button "Açık temaya geç" [ref=f6e13]
+        - button "Menüyü aç" [ref=f6e16]
+  - main [ref=f6e19]:
+    - region [ref=f6e20]:
+      - generic [ref=f6e21]:
+        - generic [ref=f6e22]:
+          - paragraph [ref=f6e23]: Web tasarım ve geliştirme
+          - heading "Katman katman kurulan web siteleri." [level=1] [ref=f6e24]
+          - paragraph [ref=f6e25]: Strateji, tasarım, kod ve yayın tek elde. İşletmeniz için hızlı, erişilebilir ve uzun ömürlü web siteleri.
+          - link "Projenizi konuşalım" [ref=f6e27] [cursor=pointer]:
+            - /url: "#contact"
+        - img "Strateji, arayüz, kod ve yayın katmanlarının üst üste durduğu soyut bir çizim." [ref=f6e33]:
+          - generic [ref=f6e35]: Yayın
+          - generic [ref=f6e46]: Kod
+          - generic [ref=f6e69]:
+            - generic [ref=f6e70]: Aa
+            - generic [ref=f6e79]: Arayüz
+          - generic [ref=f6e80]: Strateji
