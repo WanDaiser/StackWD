@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /api/
-
-# Alan adı kesinleşince bu adresi de güncelleyin (src/data/site.ts ile aynı olmalı).
-Sitemap: https://stackwd.vercel.app/sitemap-index.xml

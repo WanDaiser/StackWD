@@ -30,3 +30,13 @@ coverage/
 # Misc
 *.tgz
 .cache/
+# Astro ve Vercel üretilen dosyaları (depoya girmemeli, Vercel kaynaktan derler)
+.vercel/
+.astro/
+
+# Yerel araç çıktıları
+screenshots/
+.playwright/
+.playwright-cli/
+public/_og.html
+public/_concepts/

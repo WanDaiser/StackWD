@@ -37,7 +37,23 @@ const escapeHtml = (s: string) =>
 
 const str = (v: FormDataEntryValue | null) => (typeof v === 'string' ? v.trim() : '');
 
-export const POST: APIRoute = async ({ request, clientAddress }) => {
+/**
+ * İstemci adresi. Vercel adresi x-forwarded-for başlığında verir.
+ * context.clientAddress bazı ortamlarda okunduğu anda hata fırlatır, bu yüzden yalnızca yedek olarak
+ * ve try içinde okunur. Parametrede doğrudan açılırsa (destructuring) hata korumasız kalır.
+ */
+function clientIp(context: Parameters<APIRoute>[0]) {
+  const forwarded = context.request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
+  if (forwarded) return forwarded;
+  try {
+    return context.clientAddress || 'unknown';
+  } catch {
+    return 'unknown';
+  }
+}
+
+export const POST: APIRoute = async (context) => {
+  const { request } = context;
   const wantsJson = (request.headers.get('accept') ?? '').includes('application/json');
   let lang: Lang = defaultLang;
 
@@ -67,13 +83,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   const ts = Number(str(form.get('ts')));
   if (honeypot || (ts && Date.now() - ts < MIN_FILL_MS)) return reply(true, 200);
 
-  let ip = 'unknown';
-  try {
-    ip = clientAddress;
-  } catch {
-    /* adres alınamadı */
-  }
-  if (rateLimited(ip)) return reply(false, 429, 'rate_limited');
+  if (rateLimited(clientIp(context))) return reply(false, 429, 'rate_limited');
 
   const name = str(form.get('name'));
   const email = str(form.get('email'));
